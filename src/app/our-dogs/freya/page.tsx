@@ -139,6 +139,12 @@ const DIPLOMAS = [
     title: "HUN CH",
     src: "/documents/freya/1.pdf",
     type: "pdf",
+  },
+  {
+    id: "F.C.I",
+    title: "F.C.I",
+    src: "/documents/freya/2.jpg",
+    type: "jpg",
   }, //template
 ];
 
