@@ -167,7 +167,7 @@ const PEDIGREE = [
     name: "SANT KREAL DOMINO",
   },
 ];
-
+const maxGen = Math.max(...PEDIGREE.map((d) => d.gen));
 
 export default function SiriusPage() {
   const { t } = useLang();
@@ -199,13 +199,20 @@ export default function SiriusPage() {
             <div className="sahara-pedigree" style={{ margin: "3rem 0" }}>
               <h2>{s.pedigreeHeader || "Pedigree"}</h2>
 
-              <div className="pedigree-labels">
+              <div
+                className="pedigree-labels"
+                style={{ "--pedigree-gens": maxGen } as React.CSSProperties}
+              >
                 <span>{s.parents}</span>
                 <span>{s.grandParents}</span>
                 <span>{s.greatGrandParents}</span>
+                {maxGen >= 4 && <span>{s.greatgreatGrandParents}</span>}
               </div>
 
-              <div className="pedigree-tree">
+              <div
+                className="pedigree-tree"
+                style={{ "--pedigree-gens": maxGen } as React.CSSProperties}
+              >
                 {PEDIGREE.map((dog, i) => (
                   <div
                     key={i}

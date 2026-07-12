@@ -145,7 +145,13 @@ const DIPLOMAS = [
     title: "F.C.I",
     src: "/documents/freya/2.jpg",
     type: "jpg",
-  }, //template
+  },
+  {
+    id: "EST GCH",
+    title: "EST GCH",
+    src: "/documents/freya/3.pdf",
+    type: "pdf",
+  },
 ];
 
 // Photo gallery images
