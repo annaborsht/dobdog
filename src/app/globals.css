@@ -591,11 +591,11 @@ a {
   padding: 5rem 2rem;
 }
 .puppies-cta h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 3vw, 4rem);
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--ink);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   position: relative;
   padding-bottom: 1rem;
 }
