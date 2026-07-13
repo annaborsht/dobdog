@@ -141,8 +141,8 @@ const DIPLOMAS = [
     type: "pdf",
   },
   {
-    id: "F.C.I",
-    title: "F.C.I",
+    id: "C.I.B.-J",
+    title: "C.I.B.-J",
     src: "/documents/freya/2.jpg",
     type: "jpg",
   },
@@ -155,21 +155,11 @@ const DIPLOMAS = [
 ];
 
 // Photo gallery images
-const FREYA_PHOTOS = [
-  { id: "photo-1", src: "/images/freya/1.jpg", alt: "Freya" },
-  { id: "photo-2", src: "/images/freya/2.jpg", alt: "Freya" },
-  { id: "photo-3", src: "/images/freya/3.jpg", alt: "Freya" },
-  { id: "photo-4", src: "/images/freya/4.jpg", alt: "Freya" },
-  { id: "photo-5", src: "/images/freya/5.jpg", alt: "Freya" },
-  { id: "photo-6", src: "/images/freya/6.jpg", alt: "Freya" },
-  { id: "photo-7", src: "/images/freya/7.jpg", alt: "Freya" },
-  { id: "photo-8", src: "/images/freya/8.jpg", alt: "Freya" },
-  { id: "photo-9", src: "/images/freya/9.jpg", alt: "Freya" },
-  { id: "photo-10", src: "/images/freya/10.jpg", alt: "Freya" },
-  { id: "photo-11", src: "/images/freya/11.jpg", alt: "Freya" },
-  { id: "photo-12", src: "/images/freya/12.jpg", alt: "Freya" },
-  { id: "photo-13", src: "/images/freya/13.jpg", alt: "Freya" },
-];
+const FREYA_PHOTOS = Array.from({ length: 21 }, (_, i) => ({
+  id: `photo-${i + 1}`,
+  src: `/images/freya/${i + 1}.jpg`,
+  alt: "Freya",
+}));
 
 export default function FreyaPage() {
   const { t } = useLang();

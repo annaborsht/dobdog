@@ -1,5 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
+import { useState } from "react";
 import { useLang } from "@/components/LangContext";
+
+const SIRIUS_PHOTOS = [
+  { id: "photo-1", src: "/images/sirius/1.jpg", alt: "Sirius" },
+  { id: "photo-2", src: "/images/sirius/2.jpeg", alt: "Sirius" },
+  { id: "photo-3", src: "/images/sirius/3.jpeg", alt: "Sirius" },
+  { id: "photo-4", src: "/images/sirius/4.jpeg", alt: "Sirius" },
+  { id: "photo-5", src: "/images/sirius/5.jpeg", alt: "Sirius" },
+  { id: "photo-6", src: "/images/sirius/6.jpeg", alt: "Sirius" },
+];
 
 const PEDIGREE = [
   // Sire's side
@@ -172,6 +183,10 @@ const maxGen = Math.max(...PEDIGREE.map((d) => d.gen));
 export default function SiriusPage() {
   const { t } = useLang();
   const s = t.sirius;
+  const [lightboxPhoto, setLightboxPhoto] = useState<
+    (typeof SIRIUS_PHOTOS)[number] | null
+  >(null);
+
   return (
     <>
       <div className="article-hero article-hero--sirius">
@@ -227,6 +242,33 @@ export default function SiriusPage() {
             </div>
           </div>
         </div>
+
+        {/* --- Photo Gallery Section --- */}
+        <div className="sahara-photos">
+          <h2>{s.photosHeader || "Фотографии"}</h2>
+
+          <div className="photos-grid">
+            {SIRIUS_PHOTOS.map((photo) => (
+              <button
+                key={photo.id}
+                className="photo-thumb"
+                onClick={() => setLightboxPhoto(photo)}
+              >
+                <img src={photo.src} alt={photo.alt} />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Lightbox overlay for viewing a photo full-size */}
+        {lightboxPhoto && (
+          <div
+            className="photo-lightbox"
+            onClick={() => setLightboxPhoto(null)}
+          >
+            <img src={lightboxPhoto.src} alt={lightboxPhoto.alt} />
+          </div>
+        )}
       </div>
     </>
   );
