@@ -5,11 +5,12 @@ import { useLang } from "@/components/LangContext";
 
 const SIRIUS_PHOTOS = [
   { id: "photo-1", src: "/images/sirius/1.jpg", alt: "Sirius" },
-  { id: "photo-2", src: "/images/sirius/2.jpeg", alt: "Sirius" },
-  { id: "photo-3", src: "/images/sirius/3.jpeg", alt: "Sirius" },
-  { id: "photo-4", src: "/images/sirius/4.jpeg", alt: "Sirius" },
-  { id: "photo-5", src: "/images/sirius/5.jpeg", alt: "Sirius" },
-  { id: "photo-6", src: "/images/sirius/6.jpeg", alt: "Sirius" },
+];
+
+const SIRIUS_VIDEOS = [
+  { id: "video-1", src: "/videos/sirius/1.mp4" },
+  { id: "video-2", src: "/videos/sirius/2.mp4" },
+  { id: "video-3", src: "/videos/sirius/3.mp4" },
 ];
 
 const PEDIGREE = [
@@ -240,6 +241,25 @@ export default function SiriusPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+        {/* --- Video Section --- */}
+        <div className="sirius-videos">
+          <h2>{s.videosHeader || "Видео"}</h2>
+
+          <div className="portrait-video-grid">
+            {SIRIUS_VIDEOS.map((video) => (
+              <div key={video.id} className="portrait-video-wrap">
+                <video
+                  className="portrait-video"
+                  src={video.src}
+                  controls
+                  playsInline
+                  muted
+                  loop
+                />
+              </div>
+            ))}
           </div>
         </div>
 

@@ -14,25 +14,25 @@ export default function MiaPage() {
         <p>{m.p1}</p>
         <p>{m.p2}</p>
 
-        <div className="mia-videos">
-          <div className="mia-video-wrap">
+        <div className="portrait-video-grid">
+          <div className="portrait-video-wrap">
             <video
-              src="/videos/1.mp4"
+              src="/videos/mia/1.mp4"
               poster="/images/mia_1_thumbnail.png"
               controls
               playsInline
               preload="metadata"
-              className="mia-video"
+              className="portrait-video"
             />
           </div>
-          <div className="mia-video-wrap">
+          <div className="portrait-video-wrap">
             <video
-              src="/videos/2.mp4"
+              src="/videos/mia/2.mp4"
               poster="/images/mia_2_thumbnail.png"
               controls
               playsInline
               preload="metadata"
-              className="mia-video"
+              className="portrait-video"
             />
           </div>
         </div>

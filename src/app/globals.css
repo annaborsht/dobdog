@@ -879,24 +879,23 @@ a {
   color: var(--gold-light) !important;
 }
 
-/* ─── Mia Portrait Videos ────────────────────────── */
-.mia-videos {
+/* ─── Portrait Video Grid (reusable) ─────────────── */
+.portrait-video-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
   margin: 2.5rem 0;
 }
 
-.mia-video-wrap {
+.portrait-video-wrap {
   background: var(--ink);
   border-radius: var(--radius-md);
   overflow: hidden;
-  /* Portrait aspect ratio 9:16 */
   aspect-ratio: 9 / 16;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
 }
 
-.mia-video {
+.portrait-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -904,13 +903,14 @@ a {
 }
 
 @media (max-width: 560px) {
-  .mia-videos {
+  .portrait-video-grid {
     grid-template-columns: 1fr;
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
   }
 }
+
 /* Container & Layout Defaults */
 .container {
   width: 100%;
