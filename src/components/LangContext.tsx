@@ -87,7 +87,7 @@ export const translations = {
         link: "Read her story →",
       },
       sahara: {
-        breed: "Dobermann",
+        breed: "Great Dane",
         blurb:
           "Our accomplished champion girl — elegant, focused, and beautifully decorated.",
         link: "Read her story →",
@@ -248,11 +248,11 @@ export const translations = {
       mia: {
         breed: "Dobermann · Päästetud",
         blurb:
-          "Ukrainast päästetud Mia on tõend, et armastus suudab tervendada.",
+          "Ukrainast päästetud Mia on tõend, et armastus ravib.",
         link: "Loe tema lugu →",
       },
       sahara: {
-        breed: "Dobermann",
+        breed: "Saksa dogi",
         blurb:
           "Meie edukas tšempion — elegantne, sihikindel ja silmapaistvalt auhinnatud.",
         link: "Loe tema lugu →",
@@ -419,7 +419,7 @@ export const translations = {
         link: "Читать её историю →",
       },
       sahara: {
-        breed: "Доберман",
+        breed: "Немецкий дог",
         blurb:
           "Наша титулованная чемпионка — элегантная, целеустремленная и яркая.",
         link: "Читать её историю →",
