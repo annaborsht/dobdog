@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LangProvider } from "@/components/LangContext";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next"
 
 const playfair = Playfair_Display({
   variable: "--font-display",
@@ -38,6 +39,7 @@ export default function RootLayout({
           <Footer />
         </LangProvider>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
