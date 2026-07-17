@@ -24,13 +24,13 @@ export default function GreatDanePage() {
         <h2>{g.h1}</h2>
         <p>{g.p1}</p>
         <h2>{g.h2}</h2>
-        <p>{g.p2}</p>
-        <h2>{g.h3}</h2>
         <p>{g.p3}</p>
-        <h2>{g.h4}</h2>
+        <h2>{g.h3}</h2>
         <p>{g.p4}</p>
-        <h2>{g.h5}</h2>
+        <h2>{g.h4}</h2>
         <p>{g.p5}</p>
+        <h2>{g.h5}</h2>
+        <p>{g.p6}</p>
         <Link
           href="https://www.creeddanes.ch/en/the-breed/"
           target="_blank"
