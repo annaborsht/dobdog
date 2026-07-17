@@ -12,7 +12,7 @@
 /* ─── 2. Design Tokens ─────────────────────────────────── */
 :root {
   --ink: #1a1209;
-  --parchment: #faf6ef;
+  --parchment: #d5cbb9;
   --cream: #f5ede0;
   --gold: #b8892a;
   --gold-light: #d4a84b;
@@ -302,7 +302,7 @@ a {
 
 /* Per-dog banner overrides — add one line per page */
 .article-hero--mia {
-  --hero-bg: url("/images/mia/banner3.jpg");
+  --hero-bg: url("/images/mia/banner.png");
   background-position: center 60%;
   justify-content: end;
 }

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useLang } from "@/components/LangContext";
 
@@ -9,13 +10,13 @@ export default function GreatDanePage() {
   return (
     <>
       <div className="article-hero article-hero--greatDane">
-        <video
-          className="article-hero-video"
-          src="/images/greatDane/banner_temp.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
+        <Image
+          className="article-hero-image"
+          src="/images/greatDane/banner2.png"
+          alt={g.title}
+          fill
+          priority
+          sizes="100vw"
         />
         <h1>{g.title}</h1>
       </div>
