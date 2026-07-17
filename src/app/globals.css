@@ -338,6 +338,15 @@ a {
   overflow: hidden;
 }
 
+.article-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
 .article-hero-video {
   position: absolute;
   inset: 0;
@@ -923,7 +932,7 @@ a {
 /* Welcome Section Base */
 .welcome-section {
   padding: 5rem 0;
-  background-color: #f9f9f9; /* Light, clean background */
+  background-color: var(--parchment); /* Light, clean background */
   color: #333333;
   font-family:
     system-ui,
