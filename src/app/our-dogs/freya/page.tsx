@@ -180,76 +180,35 @@ export default function FreyaPage() {
 
       <div className="article-body">
         <p>{f.p1}</p>
+        <p>{f.p2}</p>
         <p>{f.p3}</p>
         <p>{f.p4}</p>
         <p>{f.p5}</p>
         <p>{f.p6}</p>
         <p>{f.p7}</p>
 
-        <div className="sahara-titles-container" style={{ margin: "2rem 0" }}>
+        <div className="dog-titles-section">
           <h2>{f.titlesHeader || "Titles & Achievements"}</h2>
-          <div
-            className="titles-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
-              gap: "10px",
-              margin: "1rem 0",
-            }}
-          >
+          <div className="dog-titles-grid">
             {FREYA_TITLES.map((title, index) => (
-              <span
-                key={index}
-                className="title-badge"
-                style={{
-                  padding: "8px 12px",
-                  background: "#f0f0f0",
-                  borderRadius: "6px",
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  fontSize: "0.9rem",
-                }}
-              >
+              <span key={index} className="dog-title-badge">
                 {title}
               </span>
             ))}
           </div>
         </div>
         {/* --- Diplomas & Documents Interactive Section --- */}
-        <div className="sahara-documents" style={{ margin: "3rem 0" }}>
+        <div className="dog-documents-section">
           <h2>{f.documentsHeader || "Diplomas & Certificates"}</h2>
 
-          <div
-            className="docs-layout"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-              marginTop: "1rem",
-            }}
-          >
+          <div className="dog-docs-layout">
             {/* Sidebar / Tabs for Selection */}
-            <div
-              className="docs-tabs"
-              style={{
-                display: "flex",
-                gap: "10px",
-                flexWrap: "wrap",
-              }}
-            >
+            <div className="dog-docs-tabs">
               {DIPLOMAS.map((doc) => (
                 <button
                   key={doc.id}
                   onClick={() => setActiveDoc(doc)}
-                  style={{
-                    padding: "10px 16px",
-                    borderRadius: "4px",
-                    border: "1px solid #ccc",
-                    backgroundColor: activeDoc.id === doc.id ? "#000" : "#fff",
-                    color: activeDoc.id === doc.id ? "#fff" : "#000",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                  }}
+                  className={`dog-doc-tab${activeDoc.id === doc.id ? " dog-doc-tab--active" : ""}`}
                 >
                   {doc.title}
                 </button>
@@ -257,21 +216,8 @@ export default function FreyaPage() {
             </div>
 
             {/* Document Preview Display Box */}
-            <div
-              className="docs-preview-window"
-              style={{
-                border: "1px solid #ddd",
-                borderRadius: "8px",
-                padding: "15px",
-                backgroundColor: "#fafafa",
-                minHeight: "400px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <h3 style={{ marginBottom: "15px" }}>{activeDoc.title}</h3>
+            <div className="dog-docs-preview">
+              <h3>{activeDoc.title}</h3>
 
               {activeDoc.type === "pdf" ? (
                 <iframe
@@ -279,23 +225,13 @@ export default function FreyaPage() {
                   title={activeDoc.title}
                   width="100%"
                   height="500px"
-                  style={{ border: "none", borderRadius: "4px" }}
                 />
               ) : (
-                <img
-                  src={activeDoc.src}
-                  alt={activeDoc.title}
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "500px",
-                    objectFit: "contain",
-                    borderRadius: "4px",
-                  }}
-                />
+                <img src={activeDoc.src} alt={activeDoc.title} />
               )}
             </div>
             {/* --- Pedigree Section --- */}
-            <div className="sahara-pedigree" style={{ margin: "3rem 0" }}>
+            <div className="dog-pedigree-section">
               <h2>{f.pedigreeHeader || "Pedigree"}</h2>
 
               <div className="pedigree-labels">

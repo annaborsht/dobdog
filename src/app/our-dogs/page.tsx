@@ -13,7 +13,7 @@ export default function OurDogsPage() {
   ];
   return (
     <>
-      <div className="article-hero article-hero--sirius">
+      <div className="article-hero article-hero--ourdogs">
         <p className="article-byline">{o.byline}</p>
         <h1>{o.title}</h1>
       </div>

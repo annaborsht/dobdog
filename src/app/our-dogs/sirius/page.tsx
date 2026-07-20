@@ -201,18 +201,10 @@ export default function SiriusPage() {
         <p>{s.p3}</p>
         <p>{s.p4}</p>
 
-        <div className="sahara-documents" style={{ margin: "3rem 0" }}>
-          <div
-            className="docs-layout"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-              marginTop: "1rem",
-            }}
-          >
+        <div className="dog-documents-section">
+          <div className="dog-docs-layout">
             {/* --- Pedigree Section --- */}
-            <div className="sahara-pedigree" style={{ margin: "3rem 0" }}>
+            <div className="dog-pedigree-section">
               <h2>{s.pedigreeHeader || "Pedigree"}</h2>
 
               <div
@@ -227,7 +219,12 @@ export default function SiriusPage() {
 
               <div
                 className="pedigree-tree"
-                style={{ "--pedigree-gens": maxGen } as React.CSSProperties}
+                style={
+                  {
+                    "--pedigree-gens": maxGen,
+                    "--pedigree-rows": Math.pow(2, maxGen),
+                  } as React.CSSProperties
+                }
               >
                 {PEDIGREE.map((dog, i) => (
                   <div
