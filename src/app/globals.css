@@ -328,8 +328,17 @@ a {
 }
 
 .article-hero--greatDane {
-  --hero-bg: url("/images/sahara/banner.jpeg");
-  justify-content: start;
+  position: relative; /* only needed here if .article-hero doesn't already set it */
+}
+
+.article-hero--greatDane h1 {
+  position: absolute;
+  top: 30%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  white-space: nowrap;
+  z-index: 2;
 }
 
 .article-hero--greatDane {
@@ -363,11 +372,6 @@ a {
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
   z-index: 1;
-}
-
-.article-hero--greatDane h1 {
-  position: relative;
-  z-index: 2;
 }
 
 .article-hero::after {

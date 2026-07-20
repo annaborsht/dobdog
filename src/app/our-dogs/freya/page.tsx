@@ -179,11 +179,12 @@ export default function FreyaPage() {
       </div>
 
       <div className="article-body">
-        <p>{f.p0}</p>
         <p>{f.p1}</p>
-
         <p>{f.p3}</p>
         <p>{f.p4}</p>
+        <p>{f.p5}</p>
+        <p>{f.p6}</p>
+        <p>{f.p7}</p>
 
         <div className="sahara-titles-container" style={{ margin: "2rem 0" }}>
           <h2>{f.titlesHeader || "Titles & Achievements"}</h2>

@@ -12,7 +12,7 @@ export default function GreatDanePage() {
       <div className="article-hero article-hero--greatDane">
         <Image
           className="article-hero-image"
-          src="/images/greatDane/banner2.png"
+          src="/images/greatDane/banner2.jpg"
           alt={g.title}
           fill
           priority

@@ -168,7 +168,6 @@ const SAHARA_PHOTOS = [
   { id: "photo-7", src: "/images/sahara/7.jpeg", alt: "Sahara" },
   { id: "photo-8", src: "/images/sahara/8.jpeg", alt: "Sahara" },
   { id: "photo-9", src: "/images/sahara/9.jpeg", alt: "Sahara" },
-  { id: "photo-10", src: "/images/sahara/10.jpeg", alt: "Sahara" },
 ];
 
 export default function SaharaPage() {
