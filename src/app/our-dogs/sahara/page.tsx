@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import Image from "next/image";
 
 // List of Sahara's titles
 const SAHARA_TITLES = [
@@ -173,7 +174,7 @@ const SAHARA_PHOTOS = [
 
 export default function SaharaPage() {
   const { t } = useLang();
-  const s = t.sahara; // Assuming 'sahara' translations exist in your context
+  const s = t.sahara;
 
   // State to track the currently selected document for viewing
   const [activeDoc, setActiveDoc] = useState(DIPLOMAS[0]);
@@ -187,8 +188,18 @@ export default function SaharaPage() {
     <>
       {/* Hero Section */}
       <div className="article-hero article-hero--sahara">
-        <h1>{s.title}</h1>
-        <p className="article-byline">{s.byline}</p>
+        <Image
+          src="/images/sahara/banner.jpeg"
+          alt={s.title || "Sahara"}
+          fill
+          priority
+          sizes="100vw"
+          className="article-hero-image"
+        />
+        <div className="article-hero-content">
+          <h1>{s.title}</h1>
+          <p className="article-byline">{s.byline}</p>
+        </div>
       </div>
 
       <div className="article-body">

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useLang } from "@/components/LangContext";
 
 export default function OurDogsPage() {
@@ -11,11 +12,22 @@ export default function OurDogsPage() {
     { name: "Mia", data: o.mia, href: "/our-dogs/mia" },
     { name: "Sahara", data: o.sahara, href: "/our-dogs/sahara" },
   ];
+
   return (
     <>
       <div className="article-hero article-hero--ourdogs">
-        <p className="article-byline">{o.byline}</p>
-        <h1>{o.title}</h1>
+        <Image
+          src="/images/ourDogs/banner_cropped.jpg"
+          alt={o.title || "Our Dogs"}
+          fill
+          priority
+          sizes="100vw"
+          className="article-hero-image"
+        />
+        <div className="article-hero-content">
+          <p className="article-byline">{o.byline}</p>
+          <h1>{o.title}</h1>
+        </div>
       </div>
       <div className="dogs-grid">
         {dogs.map(({ name, data, href }) => (

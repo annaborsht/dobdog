@@ -1,6 +1,7 @@
 "use client";
 import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import Image from "next/image";
 
 export default function MiaPage() {
   const { t } = useLang();
@@ -8,7 +9,17 @@ export default function MiaPage() {
   return (
     <>
       <div className="article-hero article-hero--mia">
-        <h1>{m.title}</h1>
+        <Image
+          src="/images/mia/banner.png"
+          alt={m.title || "Mia"}
+          fill
+          priority
+          sizes="100vw"
+          className="article-hero-image"
+        />
+        <div className="article-hero-content">
+          <h1>{m.title}</h1>
+        </div>
       </div>
       <div className="article-body">
         <p>{m.p0}</p>

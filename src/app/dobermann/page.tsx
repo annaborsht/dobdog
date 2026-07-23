@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useLang } from "@/components/LangContext";
 
 export default function DobermannPage() {
@@ -8,7 +9,17 @@ export default function DobermannPage() {
   return (
     <>
       <div className="article-hero article-hero--dobermann">
-        <h1>{d.title}</h1>
+        <Image
+          className="article-hero-image"
+          src="/images/dobermann/banner.jpg"
+          alt={d.title || "Dobermann"}
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="article-hero-content">
+          <h1>{d.title}</h1>
+        </div>
       </div>
       <div className="article-body">
         <p>{d.p0}</p>

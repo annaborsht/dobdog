@@ -3,6 +3,7 @@
 import { useLang } from "@/components/LangContext";
 import { useState } from "react";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import Image from "next/image";
 
 const PEDIGREE = [
   // Sire's side
@@ -247,8 +248,18 @@ export default function FreyaPage() {
   return (
     <>
       <div className="article-hero article-hero--freya">
-        <h1>{f.title}</h1>
-        <p className="article-byline">{f.byline}</p>
+        <Image
+          src="/images/freya/banner.jpg"
+          alt={f.title || "Freya"}
+          fill
+          priority
+          sizes="100vw"
+          className="article-hero-image"
+        />
+        <div className="article-hero-content">
+          <h1>{f.title}</h1>
+          <p className="article-byline">{f.byline}</p>
+        </div>
       </div>
 
       <div className="article-body">

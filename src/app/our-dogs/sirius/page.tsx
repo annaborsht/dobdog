@@ -182,7 +182,6 @@ const PEDIGREE = [
   },
 ];
 const maxGen = Math.max(...PEDIGREE.map((d) => d.gen));
-
 export default function SiriusPage() {
   const { t } = useLang();
   const s = t.sirius;
@@ -193,8 +192,18 @@ export default function SiriusPage() {
   return (
     <>
       <div className="article-hero article-hero--sirius">
-        <h1>{s.title}</h1>
-        <p className="article-byline">{s.byline}</p>
+        <Image
+          src="/images/sirius/banner.jpg"
+          alt={s.title || "Sirius"}
+          fill
+          priority
+          sizes="100vw"
+          className="article-hero-image"
+        />
+        <div className="article-hero-content">
+          <h1>{s.title}</h1>
+          <p className="article-byline">{s.byline}</p>
+        </div>
       </div>
       <div className="article-body">
         <h2 className="section-title">{s.p0}</h2>
