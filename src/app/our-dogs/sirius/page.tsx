@@ -2,6 +2,7 @@
 "use client";
 import { useState } from "react";
 import { useLang } from "@/components/LangContext";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const SIRIUS_PHOTOS = [
   { id: "photo-1", src: "/images/sirius/1.jpg", alt: "Sirius" },
@@ -201,81 +202,87 @@ export default function SiriusPage() {
         <p>{s.p3}</p>
         <p>{s.p4}</p>
 
-        <div className="dog-documents-section">
-          <div className="dog-docs-layout">
-            {/* --- Pedigree Section --- */}
-            <div className="dog-pedigree-section">
-              <h2>{s.pedigreeHeader || "Pedigree"}</h2>
-
-              <div
-                className="pedigree-labels"
-                style={{ "--pedigree-gens": maxGen } as React.CSSProperties}
-              >
-                <span>{s.parents}</span>
-                <span>{s.grandParents}</span>
-                <span>{s.greatGrandParents}</span>
-                {maxGen >= 4 && <span>{s.greatgreatGrandParents}</span>}
-              </div>
-
-              <div
-                className="pedigree-tree"
-                style={
-                  {
-                    "--pedigree-gens": maxGen,
-                    "--pedigree-rows": Math.pow(2, maxGen),
-                  } as React.CSSProperties
-                }
-              >
-                {PEDIGREE.map((dog, i) => (
-                  <div
-                    key={i}
-                    className={`pedigree-cell pedigree-gen${dog.gen} pedigree-${dog.side}`}
-                    style={{ gridRow: dog.row, gridColumn: dog.gen }}
-                  >
-                    <span className="pedigree-name">{dog.name}</span>
-                    <span className="pedigree-reg">{dog.reg}</span>
-                  </div>
-                ))}
+        <RevealOnScroll>
+          <div className="dog-documents-section">
+            <div className="dog-docs-layout">
+              {/* --- Pedigree Section --- */}
+              <div className="dog-pedigree-section">
+                <h2>{s.pedigreeHeader || "Pedigree"}</h2>
+          
+                <div
+                  className="pedigree-labels"
+                  style={{ "--pedigree-gens": maxGen } as React.CSSProperties}
+                >
+                  <span>{s.parents}</span>
+                  <span>{s.grandParents}</span>
+                  <span>{s.greatGrandParents}</span>
+                  {maxGen >= 4 && <span>{s.greatgreatGrandParents}</span>}
+                </div>
+          
+                <div
+                  className="pedigree-tree"
+                  style={
+                    {
+                      "--pedigree-gens": maxGen,
+                      "--pedigree-rows": Math.pow(2, maxGen),
+                    } as React.CSSProperties
+                  }
+                >
+                  {PEDIGREE.map((dog, i) => (
+                    <div
+                      key={i}
+                      className={`pedigree-cell pedigree-gen${dog.gen} pedigree-${dog.side}`}
+                      style={{ gridRow: dog.row, gridColumn: dog.gen }}
+                    >
+                      <span className="pedigree-name">{dog.name}</span>
+                      <span className="pedigree-reg">{dog.reg}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
         {/* --- Video Section --- */}
-        <div className="sirius-videos">
-          <h2>{s.videosHeader || "Видео"}</h2>
-
-          <div className="portrait-video-grid">
-            {SIRIUS_VIDEOS.map((video) => (
-              <div key={video.id} className="portrait-video-wrap">
-                <video
-                  className="portrait-video"
-                  src={video.src}
-                  controls
-                  playsInline
-                  muted
-                  loop
-                />
-              </div>
-            ))}
+        <RevealOnScroll>
+          <div className="sirius-videos">
+            <h2>{s.videosHeader || "Видео"}</h2>
+          
+            <div className="portrait-video-grid">
+              {SIRIUS_VIDEOS.map((video) => (
+                <div key={video.id} className="portrait-video-wrap">
+                  <video
+                    className="portrait-video"
+                    src={video.src}
+                    controls
+                    playsInline
+                    muted
+                    loop
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
         {/* --- Photo Gallery Section --- */}
-        <div className="sahara-photos">
-          <h2>{s.photosHeader || "Фотографии"}</h2>
-
-          <div className="photos-grid">
-            {SIRIUS_PHOTOS.map((photo) => (
-              <button
-                key={photo.id}
-                className="photo-thumb"
-                onClick={() => setLightboxPhoto(photo)}
-              >
-                <img src={photo.src} alt={photo.alt} />
-              </button>
-            ))}
+        <RevealOnScroll>
+          <div className="sahara-photos">
+            <h2>{s.photosHeader || "Фотографии"}</h2>
+          
+            <div className="photos-grid">
+              {SIRIUS_PHOTOS.map((photo) => (
+                <button
+                  key={photo.id}
+                  className="photo-thumb"
+                  onClick={() => setLightboxPhoto(photo)}
+                >
+                  <img src={photo.src} alt={photo.alt} />
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
         {/* Lightbox overlay for viewing a photo full-size */}
         {lightboxPhoto && (

@@ -1,5 +1,6 @@
 "use client";
 import { useLang } from "@/components/LangContext";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 export default function MiaPage() {
   const { t } = useLang();
@@ -13,29 +14,30 @@ export default function MiaPage() {
         <p>{m.p0}</p>
         <p>{m.p1}</p>
         <p>{m.p2}</p>
-
-        <div className="portrait-video-grid">
-          <div className="portrait-video-wrap">
-            <video
-              src="/videos/mia/1.mp4"
-              poster="/images/mia_1_thumbnail.png"
-              controls
-              playsInline
-              preload="metadata"
-              className="portrait-video"
-            />
+        <RevealOnScroll>
+          <div className="portrait-video-grid">
+            <div className="portrait-video-wrap">
+              <video
+                src="/videos/mia/1.mp4"
+                poster="/images/mia_1_thumbnail.png"
+                controls
+                playsInline
+                preload="metadata"
+                className="portrait-video"
+              />
+            </div>
+            <div className="portrait-video-wrap">
+              <video
+                src="/videos/mia/2.mp4"
+                poster="/images/mia_2_thumbnail.png"
+                controls
+                playsInline
+                preload="metadata"
+                className="portrait-video"
+              />
+            </div>
           </div>
-          <div className="portrait-video-wrap">
-            <video
-              src="/videos/mia/2.mp4"
-              poster="/images/mia_2_thumbnail.png"
-              controls
-              playsInline
-              preload="metadata"
-              className="portrait-video"
-            />
-          </div>
-        </div>
+        </RevealOnScroll>
 
         <p>{m.p3}</p>
         <p>{m.p4}</p>
