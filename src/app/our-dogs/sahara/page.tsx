@@ -235,7 +235,6 @@ export default function SaharaPage() {
                   src={`${activeDoc.src}#view=FitH`}
                   title={activeDoc.title}
                   width="100%"
-                  height="500px"
                 />
               ) : (
                 <img src={activeDoc.src} alt={activeDoc.title} />

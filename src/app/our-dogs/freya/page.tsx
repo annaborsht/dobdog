@@ -152,6 +152,78 @@ const DIPLOMAS = [
     src: "/documents/freya/3.pdf",
     type: "pdf",
   },
+  {
+    id: "est-jch",
+    title: "EST JCH",
+    src: "/documents/freya/plaks.pt475_260723-120810-39.pdf",
+    type: "pdf",
+  },
+  {
+    id: "tallinn-jw-2023",
+    title: "Tallinn Junior Winner 2023",
+    src: "/documents/freya/plaks.pt475_260723-120743-38.pdf",
+    type: "pdf",
+  },
+  {
+    id: "est-grand-ch",
+    title: "EST Grand CH",
+    src: "/documents/freya/plaks.pt475_260723-120851-3b.pdf",
+    type: "pdf",
+  },
+  {
+    id: "balt-jch",
+    title: "BALT JCH",
+    src: "/documents/freya/plaks.pt475_260723-120934-3d.pdf",
+    type: "pdf",
+  },
+  {
+    id: "lt-youth-ch",
+    title: "Lithuanian Youth CH",
+    src: "/documents/freya/plaks.pt475_260723-120911-3c.pdf",
+    type: "pdf",
+  },
+  {
+    id: "lv-ch",
+    title: "Latvian CH",
+    src: "/documents/freya/plaks.pt475_260723-121014-3f.pdf",
+    type: "pdf",
+  },
+  {
+    id: "lt-ch",
+    title: "Lithuanian CH",
+    src: "/documents/freya/plaks.pt475_260723-120956-3e.pdf",
+    type: "pdf",
+  },
+  {
+    id: "baltic-ch",
+    title: "Baltic CH",
+    src: "/documents/freya/plaks.pt475_260723-121036-40.pdf",
+    type: "pdf",
+  },
+  {
+    id: "tallinn-w-2024",
+    title: "Tallinn Winner 2024",
+    src: "/documents/freya/plaks.pt475_260723-121053-41.pdf",
+    type: "pdf",
+  },
+  {
+    id: "est-ch",
+    title: "EST CH",
+    src: "/documents/freya/plaks.pt475_260723-121123-42.pdf",
+    type: "pdf",
+  },
+  {
+    id: "lt-grand-ch",
+    title: "Lithuanian Grand CH",
+    src: "/documents/freya/plaks.pt475_260723-121144-43.pdf",
+    type: "pdf",
+  },
+  {
+    id: "cz-ch",
+    title: "CZ CH",
+    src: "/documents/freya/plaks.pt475_260723-121240-45.pdf",
+    type: "pdf",
+  },
 ];
 
 // Photo gallery images
@@ -224,7 +296,6 @@ export default function FreyaPage() {
                   src={`${activeDoc.src}#view=FitH`}
                   title={activeDoc.title}
                   width="100%"
-                  height="500px"
                 />
               ) : (
                 <img src={activeDoc.src} alt={activeDoc.title} />
