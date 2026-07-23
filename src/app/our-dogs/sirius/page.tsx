@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import Image from "next/image";
 
 const SIRIUS_PHOTOS = [
   { id: "photo-1", src: "/images/sirius/1.jpg", alt: "Sirius" },
@@ -208,7 +209,7 @@ export default function SiriusPage() {
               {/* --- Pedigree Section --- */}
               <div className="dog-pedigree-section">
                 <h2>{s.pedigreeHeader || "Pedigree"}</h2>
-          
+
                 <div
                   className="pedigree-labels"
                   style={{ "--pedigree-gens": maxGen } as React.CSSProperties}
@@ -218,7 +219,7 @@ export default function SiriusPage() {
                   <span>{s.greatGrandParents}</span>
                   {maxGen >= 4 && <span>{s.greatgreatGrandParents}</span>}
                 </div>
-          
+
                 <div
                   className="pedigree-tree"
                   style={
@@ -247,7 +248,7 @@ export default function SiriusPage() {
         <RevealOnScroll>
           <div className="sirius-videos">
             <h2>{s.videosHeader || "Видео"}</h2>
-          
+
             <div className="portrait-video-grid">
               {SIRIUS_VIDEOS.map((video) => (
                 <div key={video.id} className="portrait-video-wrap">
@@ -258,6 +259,7 @@ export default function SiriusPage() {
                     playsInline
                     muted
                     loop
+                    preload="metadata"
                   />
                 </div>
               ))}
@@ -269,7 +271,7 @@ export default function SiriusPage() {
         <RevealOnScroll>
           <div className="sahara-photos">
             <h2>{s.photosHeader || "Фотографии"}</h2>
-          
+
             <div className="photos-grid">
               {SIRIUS_PHOTOS.map((photo) => (
                 <button
@@ -290,7 +292,16 @@ export default function SiriusPage() {
             className="photo-lightbox"
             onClick={() => setLightboxPhoto(null)}
           >
-            <img src={lightboxPhoto.src} alt={lightboxPhoto.alt} />
+            <div
+              style={{ position: "relative", width: "90vw", height: "90vh" }}
+            >
+              <Image
+                src={lightboxPhoto.src}
+                alt={lightboxPhoto.alt}
+                fill
+                style={{ objectFit: "contain" }}
+              />
+            </div>
           </div>
         )}
       </div>
