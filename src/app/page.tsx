@@ -41,7 +41,7 @@ export default function HomePage() {
             </div>
             <div>
               <Image
-                src="/images/welcome/logo.png"
+                src="/images/welcome/logo2.png"
                 alt="logo"
                 width={400}
                 height={400}
