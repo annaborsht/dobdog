@@ -162,7 +162,7 @@ export const translations = {
       badge: "Enquiries welcome",
       title: "Raise them with knowledge, patience and love.",
       announcement:
-        "On July 25, 2026, the I. litter was born: 2 boys and 2 girls. 🩵🩵🩷🩷",
+        "On July 25, 2026, the litter A was born: 2 boys and 2 girls. 🩵🩵🩷🩷",
       p0: "All DobDog Elegance puppies are raised in our home alongside their parents, surrounded by love, proper socialization, and excellent veterinary care from day one.",
       p1: "We breed for health, temperament, and conformation — and we are selective about the families our puppies join. Every pup leaves with a full health check, vaccinations, microchip, and a lifetime of support from us.",
       p2: "We do not always have litters available, but we encourage you to register your interest. When puppies are expected, registered families are the first to know.",
@@ -336,7 +336,7 @@ export const translations = {
       badge: "Päringud oodatud",
       title: "Raise them with knowledge, patience and love.",
       announcement:
-        "25.07.26 sündis I. pesakond. 2 poissi ja 2 tüdrukut 🩵🩵🩷🩷",
+        "25.07.26 sündis pesakond A. 2 poissi ja 2 tüdrukut 🩵🩵🩷🩷",
       p0: "Kõik DobDog Elegance'i kutsikad kasvavad meie kodus koos vanematega, ümbritsetuna armastusest ja suurepärase veterinaarhooldusega.",
       p1: "Me aretame tervise ja iseloomu nimel ning oleme valivad, millisesse peresse meie kutsikad lähevad.",
       p2: "Pesakondi ei ole alati saadaval — registreerige oma huvi ja saate esimesena teada.",
@@ -512,8 +512,7 @@ export const translations = {
     puppies: {
       badge: "Запросы приветствуются",
       title: "Raise them with knowledge, patience and love.",
-      announcement:
-        "25.07.26 родился I-вый помет: 2 мальчика и 2 девочки.🩵🩵🩷🩷",
+      announcement: "25.07.26 родился помет A: 2 мальчика и 2 девочки.🩵🩵🩷🩷",
       p0: "Все щенки DobDog Elegance выращиваются в нашем доме вместе с родителями, в окружении любви и отличного ветеринарного ухода.",
       p1: "Мы разводим собак для здоровья и темперамента — и тщательно отбираем семьи для наших щенков.",
       p2: "Пометы бывают не всегда — рекомендуем зарегистрировать интерес заранее.",
