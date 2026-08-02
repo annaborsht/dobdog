@@ -2,6 +2,7 @@
 import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import Image from "next/image";
+import { VIDEOS_MIA } from "@/lib/videos";
 
 export default function MiaPage() {
   const { t } = useLang();
@@ -29,7 +30,7 @@ export default function MiaPage() {
           <div className="portrait-video-grid">
             <div className="portrait-video-wrap">
               <video
-                src="/videos/mia/1.mp4"
+                src={VIDEOS_MIA.portrait1}
                 poster="/images/mia_1_thumbnail.png"
                 controls
                 playsInline
@@ -39,7 +40,7 @@ export default function MiaPage() {
             </div>
             <div className="portrait-video-wrap">
               <video
-                src="/videos/mia/2.mp4"
+                src={VIDEOS_MIA.portrait2}
                 poster="/images/mia_2_thumbnail.png"
                 controls
                 playsInline
