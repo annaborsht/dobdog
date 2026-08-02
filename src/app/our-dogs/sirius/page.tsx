@@ -4,15 +4,16 @@ import { useState } from "react";
 import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import Image from "next/image";
+import { VIDEOS_SIRIUS } from "@/lib/videos";
 
 const SIRIUS_PHOTOS = [
   { id: "photo-1", src: "/images/sirius/1.jpg", alt: "Sirius" },
 ];
 
 const SIRIUS_VIDEOS = [
-  { id: "video-1", src: "/videos/sirius/1.mp4" },
-  { id: "video-2", src: "/videos/sirius/2.mp4" },
-  { id: "video-3", src: "/videos/sirius/3.mp4" },
+  { id: "video-1", src: VIDEOS_SIRIUS.portrait1 },
+  { id: "video-2", src: VIDEOS_SIRIUS.portrait2 },
+  { id: "video-3", src: VIDEOS_SIRIUS.portrait3 },
 ];
 
 const PEDIGREE = [

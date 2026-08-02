@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' next build",
+    "dev": "NODE_OPTIONS='--max-old-space-size=4096' next dev",
     "start": "next start",
     "lint": "eslint ."
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "@vercel/blob": "^2.6.1",
     "@vercel/speed-insights": "^2.0.0",
+    "dotenv": "^17.4.2",
     "gray-matter": "^4.0.3",
     "next": "16.2.7",
     "react": "19.2.7",
