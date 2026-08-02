@@ -21,7 +21,7 @@ export default function HomePage() {
           <div className="hero-content-group">
             <h1 className="hero-title">DobDog Elegance</h1>
             <p className="hero-subtitle">{t.home.subtitle}</p>
-            <p className="hero-subtitle">{t.home.announcement}</p>
+            <p className="hero-announcement">{t.home.announcement}</p>
           </div>
         </div>
       </section>

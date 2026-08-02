@@ -22,7 +22,7 @@ export const translations = {
     },
     home: {
       subtitle: "Bred with heart, for hearts",
-      announcement:"Our first litter was born on the 25th of July!",
+      announcement: "The A litter was born on the 25th of July, 2026!",
       welcomeTitle: "Welcome to Dobdog Elegance!",
       welcome1:
         "Dobdog Elegance is a small home kennel founded in Estonia in 2024, where dogs aren't just dogs – they are our family, friends, and everyday companions.",
@@ -200,7 +200,7 @@ export const translations = {
     },
     home: {
       subtitle: "Südamest südamesse.",
-      announcement:"25. juulil sündis esimene pesakond!",
+      announcement: "25. juulil 2026 sündis A pesakond!",
       welcomeTitle: "Tere tulemast Dobdog Elegance'i!",
       welcome1:
         "Dobdog Elegance on 2024. aastal Eestis loodud väike kodune kennel, kus koerad ei ole lihtsalt koerad – nad on meie pere, sõbrad ja igapäevased kaaslased.",
@@ -375,7 +375,7 @@ export const translations = {
     },
     home: {
       subtitle: "Выращены с сердцем, для сердец",
-      announcement:"Первый помёт родился 25 июля!",
+      announcement: "Помёт A родился 25 июля 2026 года!",
       welcomeTitle: "Добро пожаловать в Dobdog Elegance!",
       welcome1:
         "Dobdog Elegance — небольшой домашний питомник, основанный в Эстонии в 2024 году, где собаки для нас не просто собаки — они наша семья, друзья и повседневные компаньоны.",
