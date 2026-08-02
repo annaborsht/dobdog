@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLang, type Lang } from "./LangContext";
 
 const LANGS: { code: Lang; flag: string; label: string }[] = [
@@ -14,6 +14,17 @@ export default function Navbar() {
   const [dogsOpen, setDogsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [puppiesSeen, setPuppiesSeen] = useState(true); // default true to avoid SSR flash
+
+  useEffect(() => {
+    const seen = localStorage.getItem("puppiesBadgeSeen");
+    setPuppiesSeen(seen === "true");
+  }, []);
+
+  const dismissPuppiesBadge = () => {
+    localStorage.setItem("puppiesBadgeSeen", "true");
+    setPuppiesSeen(true);
+  };
 
   const current = LANGS.find(l => l.code === lang)!;
 
@@ -44,7 +55,17 @@ export default function Navbar() {
             )}
           </li>
 
-          <li><Link href="/puppies" className="nav-link">{t.nav.puppies}</Link></li>
+          <li>
+            <Link
+              href="/puppies"
+              className="nav-link nav-link-badge-wrap"
+              onClick={dismissPuppiesBadge}
+            >
+              {t.nav.puppies}
+              {!puppiesSeen && <span className="nav-badge-dot" />}
+            </Link>
+          </li>
+
           <li><Link href="/contact" className="nav-link">{t.nav.contact}</Link></li>
 
           {/* ── Language selector ── */}
@@ -95,7 +116,16 @@ export default function Navbar() {
           <Link href="/our-dogs/sirius" className="mobile-link" onClick={() => setMobileOpen(false)}>Sirius</Link>
           <Link href="/our-dogs/mia" className="mobile-link" onClick={() => setMobileOpen(false)}>Mia</Link>
           <Link href="/our-dogs/sahara" className="mobile-link" onClick={() => setMobileOpen(false)}>Sahara</Link>
-          <Link href="/puppies" className="mobile-link" onClick={() => setMobileOpen(false)}>{t.nav.puppies}</Link>
+
+          <Link
+            href="/puppies"
+            className="mobile-link mobile-link-badge-wrap"
+            onClick={() => { setMobileOpen(false); dismissPuppiesBadge(); }}
+          >
+            {t.nav.puppies}
+            {!puppiesSeen && <span className="nav-badge-dot nav-badge-dot--mobile" />}
+          </Link>
+
           <Link href="/contact" className="mobile-link" onClick={() => setMobileOpen(false)}>{t.nav.contact}</Link>
 
           {/* Mobile language row */}
