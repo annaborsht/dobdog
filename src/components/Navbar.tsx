@@ -27,31 +27,71 @@ export default function Navbar() {
     setPuppiesSeen(true);
   };
 
-  const current = LANGS.find(l => l.code === lang)!;
+  const current = LANGS.find((l) => l.code === lang)!;
 
   return (
     <header className="navbar">
       <nav className="navbar-inner">
-        <Link href="/" className="navbar-brand">DobDog Elegance</Link>
+        <Link href="/" className="navbar-brand">
+          DobDog Elegance
+        </Link>
 
         {/* Desktop nav */}
         <ul className="nav-links">
-          <li><Link href="/" className="nav-link">{t.nav.home}</Link></li>
-          <li><Link href="/dobermann" className="nav-link">{t.nav.dobermann}</Link></li>
-          <li><Link href="/great-dane" className="nav-link">{t.nav.greatDane}</Link></li>
+          <li>
+            <Link href="/" className="nav-link">
+              {t.nav.home}
+            </Link>
+          </li>
+          <li>
+            <Link href="/dobermann" className="nav-link">
+              {t.nav.dobermann}
+            </Link>
+          </li>
+          <li>
+            <Link href="/great-dane" className="nav-link">
+              {t.nav.greatDane}
+            </Link>
+          </li>
 
           <li
             className="nav-dropdown"
             onMouseEnter={() => setDogsOpen(true)}
             onMouseLeave={() => setDogsOpen(false)}
           >
-            <button className="nav-link nav-dropdown-btn">{t.nav.ourDogs} ▾</button>
+            <button className="nav-link nav-dropdown-btn">
+              {t.nav.ourDogs} ▾
+            </button>
             {dogsOpen && (
               <ul className="dropdown-menu">
-                <li><Link href="/our-dogs/freya" className="dropdown-item">Freya</Link></li>
-                <li><Link href="/our-dogs/sirius" className="dropdown-item">Sirius</Link></li>
-                <li><Link href="/our-dogs/mia" className="dropdown-item">Mia</Link></li>
-                <li><Link href="/our-dogs/sahara" className="dropdown-item">Sahara</Link></li>
+                <li>
+                  <Link href="/our-dogs/freya" className="dropdown-item">
+                    Freya
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/our-dogs/sirius" className="dropdown-item">
+                    Sirius
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/our-dogs/mia" className="dropdown-item">
+                    Mia
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/our-dogs/sahara" className="dropdown-item">
+                    Sahara
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/our-dogs/armageddons_hope"
+                    className="dropdown-item"
+                  >
+                    Armageddons Hope
+                  </Link>
+                </li>
               </ul>
             )}
           </li>
@@ -67,7 +107,11 @@ export default function Navbar() {
             </Link>
           </li>
 
-          <li><Link href="/contact" className="nav-link">{t.nav.contact}</Link></li>
+          <li>
+            <Link href="/contact" className="nav-link">
+              {t.nav.contact}
+            </Link>
+          </li>
 
           {/* ── Language selector ── */}
           <li
@@ -75,18 +119,24 @@ export default function Navbar() {
             onMouseEnter={() => setLangOpen(true)}
             onMouseLeave={() => setLangOpen(false)}
           >
-            <button className="nav-link nav-dropdown-btn lang-btn" aria-label="Select language">
+            <button
+              className="nav-link nav-dropdown-btn lang-btn"
+              aria-label="Select language"
+            >
               <span className="lang-flag">{current.flag}</span>
               <span className="lang-code">{current.code.toUpperCase()}</span>
               <span className="lang-chevron">▾</span>
             </button>
             {langOpen && (
               <ul className="dropdown-menu lang-menu">
-                {LANGS.map(l => (
+                {LANGS.map((l) => (
                   <li key={l.code}>
                     <button
                       className={`dropdown-item lang-option${lang === l.code ? " lang-active" : ""}`}
-                      onClick={() => { setLang(l.code); setLangOpen(false); }}
+                      onClick={() => {
+                        setLang(l.code);
+                        setLangOpen(false);
+                      }}
                     >
                       <span className="lang-flag">{l.flag}</span>
                       <span>{l.label}</span>
@@ -104,38 +154,103 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </nav>
 
       {mobileOpen && (
         <div className="mobile-menu">
-          <Link href="/" className="mobile-link" onClick={() => setMobileOpen(false)}>{t.nav.home}</Link>
-          <Link href="/dobermann" className="mobile-link" onClick={() => setMobileOpen(false)}>{t.nav.dobermann}</Link>
-          <Link href="/great-dane" className="mobile-link" onClick={() => setMobileOpen(false)}>{t.nav.greatDane}</Link>
-          <Link href="/our-dogs/freya" className="mobile-link" onClick={() => setMobileOpen(false)}>Freya</Link>
-          <Link href="/our-dogs/sirius" className="mobile-link" onClick={() => setMobileOpen(false)}>Sirius</Link>
-          <Link href="/our-dogs/mia" className="mobile-link" onClick={() => setMobileOpen(false)}>Mia</Link>
-          <Link href="/our-dogs/sahara" className="mobile-link" onClick={() => setMobileOpen(false)}>Sahara</Link>
+          <Link
+            href="/"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            {t.nav.home}
+          </Link>
+          <Link
+            href="/dobermann"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            {t.nav.dobermann}
+          </Link>
+          <Link
+            href="/great-dane"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            {t.nav.greatDane}
+          </Link>
+          <Link
+            href="/our-dogs/freya"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Freya
+          </Link>
+          <Link
+            href="/our-dogs/sirius"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Sirius
+          </Link>
+          <Link
+            href="/our-dogs/mia"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Mia
+          </Link>
+          <Link
+            href="/our-dogs/sahara"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Sahara
+          </Link>
+          <Link
+            href="/our-dogs/armageddons_hope"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Armageddons Hope
+          </Link>
 
           <Link
             href="/puppies"
             className="mobile-link mobile-link-badge-wrap"
-            onClick={() => { setMobileOpen(false); dismissPuppiesBadge(); }}
+            onClick={() => {
+              setMobileOpen(false);
+              dismissPuppiesBadge();
+            }}
           >
             {t.nav.puppies}
-            {!puppiesSeen && <span className="nav-badge-dot nav-badge-dot--mobile" />}
+            {!puppiesSeen && (
+              <span className="nav-badge-dot nav-badge-dot--mobile" />
+            )}
           </Link>
 
-          <Link href="/contact" className="mobile-link" onClick={() => setMobileOpen(false)}>{t.nav.contact}</Link>
+          <Link
+            href="/contact"
+            className="mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            {t.nav.contact}
+          </Link>
 
           {/* Mobile language row */}
           <div className="mobile-lang-row">
-            {LANGS.map(l => (
+            {LANGS.map((l) => (
               <button
                 key={l.code}
                 className={`mobile-lang-btn${lang === l.code ? " mobile-lang-active" : ""}`}
-                onClick={() => { setLang(l.code); setMobileOpen(false); }}
+                onClick={() => {
+                  setLang(l.code);
+                  setMobileOpen(false);
+                }}
               >
                 <span>{l.flag}</span>
                 <span>{l.code.toUpperCase()}</span>

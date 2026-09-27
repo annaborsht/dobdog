@@ -399,6 +399,12 @@ a {
   justify-content: flex-end;
 }
 
+.article-hero--armageddonshope {
+  justify-content: flex-end;
+  background: linear-gradient(180deg, var(--slate), var(--ink));
+  min-height: 400px;
+}
+
 .article-hero--dobermann {
   justify-content: flex-end;
   padding-bottom: 10%;
