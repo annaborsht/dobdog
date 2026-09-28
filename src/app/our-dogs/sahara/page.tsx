@@ -1,10 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState } from "react";
 import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import Image from "next/image";
+import PhotoGallery from "@/components/PhotoGallery";
+import PedigreeTree, { type PedigreeEntry } from "@/components/PedigreeTree";
+import TitleBadges from "@/components/TitleBadges";
+import DiplomaViewer, { type Diploma } from "@/components/DiplomaViewer";
 
 // List of Sahara's titles
 const SAHARA_TITLES = [
@@ -21,7 +23,7 @@ const SAHARA_TITLES = [
 ];
 
 // Add near the top of the file, alongside SAHARA_TITLES
-const PEDIGREE = [
+const PEDIGREE: PedigreeEntry[] = [
   // Sire's side
   {
     gen: 1,
@@ -126,7 +128,7 @@ const PEDIGREE = [
 ];
 
 // Document data mapped directly from your files
-const DIPLOMAS = [
+const DIPLOMAS: Diploma[] = [
   {
     id: "est-gr-jch",
     title: "EST GR JCH",
@@ -176,14 +178,6 @@ export default function SaharaPage() {
   const { t } = useLang();
   const s = t.sahara;
 
-  // State to track the currently selected document for viewing
-  const [activeDoc, setActiveDoc] = useState(DIPLOMAS[0]);
-
-  // State to track which photo is open in the lightbox (null = closed)
-  const [lightboxPhoto, setLightboxPhoto] = useState<
-    (typeof SAHARA_PHOTOS)[number] | null
-  >(null);
-
   return (
     <>
       {/* Hero Section */}
@@ -208,118 +202,39 @@ export default function SaharaPage() {
         <p>{s.p1}</p>
         <p>{s.p3}</p>
 
-        {/* --- Sahara's Titles Section --- */}
         <RevealOnScroll>
-          <div className="dog-titles-section">
-            <h2>{s.titlesHeader || "Titles & Achievements"}</h2>
-
-            <p>{s.p2}</p>
-            <div className="dog-titles-grid">
-              {SAHARA_TITLES.map((title, index) => (
-                <span
-                  key={index}
-                  className="dog-title-badge"
-                  style={{ transitionDelay: `${index * 30}ms` }}
-                >
-                  {title}
-                </span>
-              ))}
-            </div>
-          </div>
+          <TitleBadges
+            header={s.titlesHeader || "Titles & Achievements"}
+            intro={s.p2}
+            titles={SAHARA_TITLES}
+          />
         </RevealOnScroll>
 
-        {/* --- Diplomas & Documents Interactive Section --- */}
         <RevealOnScroll>
-          <div className="dog-documents-section">
-            <h2>{s.documentsHeader || "Diplomas & Certificates"}</h2>
-
-            <div className="dog-docs-layout">
-              {/* Sidebar / Tabs for Selection */}
-              <div className="dog-docs-tabs">
-                {DIPLOMAS.map((doc) => (
-                  <button
-                    key={doc.id}
-                    onClick={() => setActiveDoc(doc)}
-                    className={`dog-doc-tab${activeDoc.id === doc.id ? " dog-doc-tab--active" : ""}`}
-                  >
-                    {doc.title}
-                  </button>
-                ))}
-              </div>
-
-              {/* Document Preview Display Box */}
-              <div className="dog-docs-preview">
-                <h3>{activeDoc.title}</h3>
-
-                {activeDoc.type === "pdf" ? (
-                  <iframe
-                    src={`${activeDoc.src}#view=FitH`}
-                    title={activeDoc.title}
-                    width="100%"
-                  />
-                ) : (
-                  <img src={activeDoc.src} alt={activeDoc.title} />
-                )}
-              </div>
-            </div>
-          </div>
+          <DiplomaViewer
+            header={s.documentsHeader || "Diplomas & Certificates"}
+            diplomas={DIPLOMAS}
+          />
         </RevealOnScroll>
 
-        {/* --- Pedigree Section --- */}
         <RevealOnScroll>
-          <div className="dog-pedigree-section">
-            <h2>{s.pedigreeHeader || "Pedigree"}</h2>
-
-            <div className="pedigree-labels">
-              <span>{s.parents}</span>
-              <span>{s.grandParents}</span>
-              <span>{s.greatGrandParents}</span>
-            </div>
-
-            <div className="pedigree-tree">
-              {PEDIGREE.map((dog, i) => (
-                <div
-                  key={i}
-                  className={`pedigree-cell pedigree-gen${dog.gen} pedigree-${dog.side}`}
-                  style={{ gridRow: dog.row, gridColumn: dog.gen }}
-                >
-                  <span className="pedigree-name">{dog.name}</span>
-                  <span className="pedigree-reg">{dog.reg}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <PedigreeTree
+            header={s.pedigreeHeader || "Pedigree"}
+            entries={PEDIGREE}
+            labels={{
+              parents: s.parents,
+              grandParents: s.grandParents,
+              greatGrandParents: s.greatGrandParents,
+            }}
+          />
         </RevealOnScroll>
 
-        {/* --- Photo Gallery Section --- */}
         <RevealOnScroll>
-          <div className="sahara-photos">
-            <h2>{s.photosHeader || "Фотографии"}</h2>
-
-            <div className="photos-grid">
-              {SAHARA_PHOTOS.map((photo, i) => (
-                <button
-                  key={photo.id}
-                  className="photo-thumb"
-                  style={{ transitionDelay: `${(i % 6) * 60}ms` }}
-                  onClick={() => setLightboxPhoto(photo)}
-                >
-                  <img src={photo.src} alt={photo.alt} />
-                </button>
-              ))}
-            </div>
-          </div>
+          <PhotoGallery
+            header={s.photosHeader || "Фотографии"}
+            photos={SAHARA_PHOTOS}
+          />
         </RevealOnScroll>
-
-        {/* Lightbox overlay for viewing a photo full-size */}
-        {lightboxPhoto && (
-          <div
-            className="photo-lightbox"
-            onClick={() => setLightboxPhoto(null)}
-          >
-            <img src={lightboxPhoto.src} alt={lightboxPhoto.alt} />
-          </div>
-        )}
       </div>
     </>
   );

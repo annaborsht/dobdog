@@ -1,0 +1,65 @@
+"use client";
+import { useState } from "react";
+import { createPortal } from "react-dom";
+import Image from "next/image";
+
+export interface GalleryPhoto {
+  id: string;
+  src: string;
+  alt: string;
+}
+
+export default function PhotoGallery({
+  photos,
+  header,
+}: {
+  photos: GalleryPhoto[];
+  header?: string;
+}) {
+  const [lightboxPhoto, setLightboxPhoto] = useState<GalleryPhoto | null>(
+    null,
+  );
+
+  return (
+    <div className="sahara-photos">
+      {header && <h2>{header}</h2>}
+
+      <div className="photos-grid">
+        {photos.map((photo, i) => (
+          <button
+            key={photo.id}
+            className="photo-thumb"
+            style={{ transitionDelay: `${(i % 6) * 60}ms` }}
+            onClick={() => setLightboxPhoto(photo)}
+          >
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(max-width: 480px) 90vw, (max-width: 768px) 45vw, 220px"
+            />
+          </button>
+        ))}
+      </div>
+
+      {lightboxPhoto &&
+        createPortal(
+          <div
+            className="photo-lightbox"
+            onClick={() => setLightboxPhoto(null)}
+          >
+            <div className="photo-lightbox-frame">
+              <Image
+                src={lightboxPhoto.src}
+                alt={lightboxPhoto.alt}
+                fill
+                sizes="90vw"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          </div>,
+          document.body,
+        )}
+    </div>
+  );
+}

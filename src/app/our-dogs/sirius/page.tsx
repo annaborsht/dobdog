@@ -1,10 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState } from "react";
 import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import Image from "next/image";
 import { VIDEOS_SIRIUS } from "@/lib/videos";
+import PhotoGallery from "@/components/PhotoGallery";
+import PedigreeTree, { type PedigreeEntry } from "@/components/PedigreeTree";
+import Image from "next/image";
 
 const SIRIUS_PHOTOS = [
   { id: "photo-1", src: "/images/sirius/1.jpg", alt: "Sirius" },
@@ -16,7 +16,7 @@ const SIRIUS_VIDEOS = [
   { id: "video-3", src: VIDEOS_SIRIUS.portrait3 },
 ];
 
-const PEDIGREE = [
+const PEDIGREE: PedigreeEntry[] = [
   // Sire's side
   {
     gen: 1,
@@ -182,13 +182,9 @@ const PEDIGREE = [
     name: "SANT KREAL DOMINO",
   },
 ];
-const maxGen = Math.max(...PEDIGREE.map((d) => d.gen));
 export default function SiriusPage() {
   const { t } = useLang();
   const s = t.sirius;
-  const [lightboxPhoto, setLightboxPhoto] = useState<
-    (typeof SIRIUS_PHOTOS)[number] | null
-  >(null);
 
   return (
     <>
@@ -214,45 +210,16 @@ export default function SiriusPage() {
         <p>{s.p4}</p>
 
         <RevealOnScroll>
-          <div className="dog-documents-section">
-            <div className="dog-docs-layout">
-              {/* --- Pedigree Section --- */}
-              <div className="dog-pedigree-section">
-                <h2>{s.pedigreeHeader || "Pedigree"}</h2>
-
-                <div
-                  className="pedigree-labels"
-                  style={{ "--pedigree-gens": maxGen } as React.CSSProperties}
-                >
-                  <span>{s.parents}</span>
-                  <span>{s.grandParents}</span>
-                  <span>{s.greatGrandParents}</span>
-                  {maxGen >= 4 && <span>{s.greatgreatGrandParents}</span>}
-                </div>
-
-                <div
-                  className="pedigree-tree"
-                  style={
-                    {
-                      "--pedigree-gens": maxGen,
-                      "--pedigree-rows": Math.pow(2, maxGen),
-                    } as React.CSSProperties
-                  }
-                >
-                  {PEDIGREE.map((dog, i) => (
-                    <div
-                      key={i}
-                      className={`pedigree-cell pedigree-gen${dog.gen} pedigree-${dog.side}`}
-                      style={{ gridRow: dog.row, gridColumn: dog.gen }}
-                    >
-                      <span className="pedigree-name">{dog.name}</span>
-                      <span className="pedigree-reg">{dog.reg}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <PedigreeTree
+            header={s.pedigreeHeader || "Pedigree"}
+            entries={PEDIGREE}
+            labels={{
+              parents: s.parents,
+              grandParents: s.grandParents,
+              greatGrandParents: s.greatGrandParents,
+              greatGreatGrandParents: s.greatgreatGrandParents,
+            }}
+          />
         </RevealOnScroll>
         {/* --- Video Section --- */}
         <RevealOnScroll>
@@ -277,43 +244,12 @@ export default function SiriusPage() {
           </div>
         </RevealOnScroll>
 
-        {/* --- Photo Gallery Section --- */}
         <RevealOnScroll>
-          <div className="sahara-photos">
-            <h2>{s.photosHeader || "Фотографии"}</h2>
-
-            <div className="photos-grid">
-              {SIRIUS_PHOTOS.map((photo) => (
-                <button
-                  key={photo.id}
-                  className="photo-thumb"
-                  onClick={() => setLightboxPhoto(photo)}
-                >
-                  <img src={photo.src} alt={photo.alt} />
-                </button>
-              ))}
-            </div>
-          </div>
+          <PhotoGallery
+            header={s.photosHeader || "Фотографии"}
+            photos={SIRIUS_PHOTOS}
+          />
         </RevealOnScroll>
-
-        {/* Lightbox overlay for viewing a photo full-size */}
-        {lightboxPhoto && (
-          <div
-            className="photo-lightbox"
-            onClick={() => setLightboxPhoto(null)}
-          >
-            <div
-              style={{ position: "relative", width: "90vw", height: "90vh" }}
-            >
-              <Image
-                src={lightboxPhoto.src}
-                alt={lightboxPhoto.alt}
-                fill
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-          </div>
-        )}
       </div>
     </>
   );

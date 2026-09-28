@@ -1216,6 +1216,7 @@ a {
 }
 
 .photo-thumb {
+  position: relative;
   padding: 0;
   border: none;
   border-radius: 8px;
@@ -1255,6 +1256,12 @@ a {
   max-height: 100%;
   object-fit: contain;
   border-radius: 4px;
+}
+
+.photo-lightbox-frame {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
 }
 
 .puppies-poster {

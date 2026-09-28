@@ -3,15 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLang } from "@/components/LangContext";
 
-// Not yet wired into LangContext translations — add en/et/ru entries
-// under t.ourDogs.armageddonsHope later if you want this localized too.
-const ARMAGEDDONS_HOPE = {
-  breed: "Dobermann · Puppy",
-  blurb:
-    "Born 25.07.2026 — the newest member of our pack, full of curiosity and promise.",
-  link: "Read more →",
-};
-
 export default function OurDogsPage() {
   const { t } = useLang();
   const o = t.ourDogs;
@@ -22,7 +13,7 @@ export default function OurDogsPage() {
     { name: "Sahara", data: o.sahara, href: "/our-dogs/sahara" },
     {
       name: "Armageddons Hope",
-      data: ARMAGEDDONS_HOPE,
+      data: o.armageddonsHope,
       href: "/our-dogs/armageddons_hope",
     },
   ];
