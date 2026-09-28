@@ -210,7 +210,7 @@ export default function PuppiesPage() {
                 )}
               </span>
               {puppy.available ? (
-                <span className="cta-badge">AVAILABLE</span>
+                <span className="cta-badge">{p.available}</span>
               ) : (
                 <span className="litter-puppy-location">
                   {puppy.locationKey === "finland" ? p.finland : p.estonia}
