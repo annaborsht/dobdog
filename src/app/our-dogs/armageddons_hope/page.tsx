@@ -1,0 +1,52 @@
+"use client";
+import { useLang } from "@/components/LangContext";
+import RevealOnScroll from "@/components/RevealOnScroll";
+import PhotoGallery from "@/components/PhotoGallery";
+
+// TODO: replace with your actual Vercel Blob store base URL once the
+// photos are uploaded, e.g.
+// "https://<your-store-id>.public.blob.vercel-storage.com/armageddons_hope"
+const PHOTO_BASE_URL =
+  "https://mmwjaafneskfdl7c.public.blob.vercel-storage.com/armageddons_hope/compressed";
+
+const ARMAGEDDONS_HOPE_PHOTOS = [
+  "6T1A5173",
+  "6T1A5570",
+  "6T1A5716",
+  "6T1A5744",
+  "6T1A5781",
+].map((id) => ({
+  id,
+  src: `${PHOTO_BASE_URL}/${id}.jpg`,
+  alt: "Dobdog Elegance Armageddons Hope",
+}));
+
+export default function ArmageddonsHopePage() {
+  const { t } = useLang();
+  const a = t.armageddonsHope;
+
+  return (
+    <>
+      <div className="article-hero article-hero--armageddonshope">
+        <div className="article-hero-content">
+          <h1>{a.title}</h1>
+          <p className="article-byline">{a.byline}</p>
+        </div>
+      </div>
+
+      <div className="article-body">
+        {/* Filler description — swap in the real text whenever it's ready */}
+        <p>{a.p0}</p>
+        <p>{a.p1}</p>
+        <p>{a.p2}</p>
+
+        <RevealOnScroll>
+          <PhotoGallery
+            header={a.photosHeader}
+            photos={ARMAGEDDONS_HOPE_PHOTOS}
+          />
+        </RevealOnScroll>
+      </div>
+    </>
+  );
+}

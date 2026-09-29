@@ -11,6 +11,11 @@ export default function OurDogsPage() {
     { name: "Sirius", data: o.sirius, href: "/our-dogs/sirius" },
     { name: "Mia", data: o.mia, href: "/our-dogs/mia" },
     { name: "Sahara", data: o.sahara, href: "/our-dogs/sahara" },
+    {
+      name: "Armageddons Hope",
+      data: o.armageddonsHope,
+      href: "/our-dogs/armageddons_hope",
+    },
   ];
 
   return (

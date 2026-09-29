@@ -399,6 +399,12 @@ a {
   justify-content: flex-end;
 }
 
+.article-hero--armageddonshope {
+  justify-content: flex-end;
+  background: linear-gradient(180deg, var(--slate), var(--ink));
+  min-height: 400px;
+}
+
 .article-hero--dobermann {
   justify-content: flex-end;
   padding-bottom: 10%;
@@ -834,7 +840,79 @@ a {
   text-transform: uppercase;
   padding: 0.35rem 1rem;
   border-radius: 100px;
-  margin-bottom: 2rem;
+  margin-bottom: auto;
+}
+
+/* ─── Litter Section (Puppies Page) ──────────────── */
+.a-litter-section {
+  align-self: stretch;
+  text-align: center;
+}
+
+.litter-roster {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem auto 2.5rem;
+  max-width: 480px;
+  text-align: left;
+}
+
+.litter-roster-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.litter-puppy-name {
+  font-family: var(--font-display), serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.litter-puppy-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.litter-puppy-location .cta-badge {
+  margin-bottom: 0;
+}
+
+.puppy-flag {
+  display: inline-block;
+  font-size: 1.2rem;
+  transform-origin: 30% 70%;
+  animation: flagWave 2.4s ease-in-out infinite;
+}
+
+@keyframes flagWave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .puppy-flag {
+    animation: none;
+  }
 }
 
 /* ─── Contact Page ───────────────────────────────── */
@@ -1210,6 +1288,7 @@ a {
 }
 
 .photo-thumb {
+  position: relative;
   padding: 0;
   border: none;
   border-radius: 8px;
@@ -1249,6 +1328,12 @@ a {
   max-height: 100%;
   object-fit: contain;
   border-radius: 4px;
+}
+
+.photo-lightbox-frame {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
 }
 
 .puppies-poster {

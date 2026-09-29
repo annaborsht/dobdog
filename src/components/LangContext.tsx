@@ -99,6 +99,12 @@ export const translations = {
           "Our accomplished champion girl — elegant, focused, and beautifully decorated.",
         link: "Read her story →",
       },
+      armageddonsHope: {
+        breed: "Dobermann · Puppy",
+        blurb:
+          "Born 25.07.2026 — the newest member of our pack, full of curiosity and promise.",
+        link: "Read more →",
+      },
     },
     freya: {
       titlesHeader: "Official titles & achievements",
@@ -159,6 +165,14 @@ export const translations = {
       p2: "Our Sahara has also begun a beautiful journey in the show world. At just 15 months old, she has already achieved several prestigious titles, including the International Junior Champion title C.I.B.-J. These achievements confirm her excellent quality and mark just the beginning of a beautiful and promising show career.",
       p3: "For us, however, Sahara is much more than her distinguished background, noble pedigree, or show achievements. She is a beloved family member – a dog with a gentle heart, a joyful spirit, and a dignified presence, bringing joy, pride, and endless warm moments into our every day.",
     },
+    armageddonsHope: {
+      title: "Dobdog Elegance Armageddons Hope",
+      byline: "DOB 25.07.2026",
+      photosHeader: "Photos",
+      p0: "Dobdog Elegance Armageddons Hope is the newest member of our pack, born on the 25th of July, 2026. From the very first days, this little one has already shown a spark of curiosity and confidence that promises great things ahead.",
+      p1: "Growing up surrounded by love, gentle guidance, and plenty of socialization, Armageddons Hope is being raised the same way every DobDog Elegance puppy is — with patience, care, and an eye toward a healthy, balanced future.",
+      p2: "As the weeks go on, we'll be updating this page with more photos, milestones, and stories as this pup continues to grow and explore the world.",
+    },
     puppies: {
       badge: "Enquiries welcome",
       title: "Raise them with knowledge, patience and love.",
@@ -169,6 +183,15 @@ export const translations = {
       p2: "We do not always have litters available, but we encourage you to register your interest. When puppies are expected, registered families are the first to know.",
       p3: "Current availability: Please contact us directly for up-to-date litter information.",
       cta: "Enquire about puppies",
+      aLitterHeader: "A-litter",
+      available: "Available",
+      estonia: "Estonia",
+      finland: "Finland",
+      photosHeader: "Photos",
+      pedigreeHeader: "A-litter's pedigree",
+      parents: "1. generation",
+      grandParents: "2. generation",
+      greatGrandParents: "3. generation",
     },
     contact: {
       title: "Get in touch",
@@ -274,6 +297,12 @@ export const translations = {
           "Meie edukas tšempion — elegantne, sihikindel ja silmapaistvalt auhinnatud.",
         link: "Loe tema lugu →",
       },
+      armageddonsHope: {
+        breed: "Dobermann · Kutsikas",
+        blurb:
+          "Sündinud 25.07.2026 — meie karja uusim liige, täis uudishimu ja lubadust.",
+        link: "Loe rohkem →",
+      },
     },
     freya: {
       titlesHeader: "Ametlikud tiitlid ja saavutused",
@@ -334,6 +363,14 @@ export const translations = {
       p2: "Ka meie Sahara on alustanud kaunist teekonda näitusemaailmas. Juba 15 kuu vanuselt on ta saavutanud mitmeid hinnatud tiitleid, nende seas ka rahvusvahelise juunioršampioni tiitli C.I.B.-J. Need saavutused kinnitavad tema suurepärast kvaliteeti ning tähistavad alles ühe ilusa ja lootustandva näitusekarjääri algust.",
       p3: "Meie jaoks on Sahara aga palju enamat kui tema silmapaistev päritolu, väärikas sugupuu või näitusesaavutused. Ta on armastatud pereliige – õrna südame, rõõmsa meele ja väärika olemisega koer, kes toob meie igasse päeva rõõmu, uhkust ja lõputult sooje hetki.",
     },
+    armageddonsHope: {
+      title: "Dobdog Elegance Armageddons Hope",
+      byline: "Sündinud 25.07.2026",
+      photosHeader: "Fotod",
+      p0: "Dobdog Elegance Armageddons Hope on meie karja uusim liige, sündinud 25. juulil 2026. Juba esimestest päevadest peale on see pisike näidanud uudishimu ja enesekindlust, mis lubab tulevikus suuri asju.",
+      p1: "Armastuse, hoolsa juhendamise ja rohke sotsialiseerimise keskel üles kasvades kasvatatakse Armageddons Hope'i samamoodi nagu iga teist DobDog Elegance'i kutsikat — kannatlikkuse, hoolega ning pilguga tervele ja tasakaalukale tulevikule.",
+      p2: "Nädalate möödudes täiendame seda lehte uute fotode, verstapostide ja lugudega, kui see kutsikas kasvab ja maailma avastab.",
+    },
     puppies: {
       badge: "Päringud oodatud",
       title: "Raise them with knowledge, patience and love.",
@@ -344,6 +381,15 @@ export const translations = {
       p2: "Pesakondi ei ole alati saadaval — registreerige oma huvi ja saate esimesena teada.",
       p3: "Praegune saadavus: võtke meiega otse ühendust.",
       cta: "Saada päring!",
+      aLitterHeader: "A-pesakond",
+      available: "Saadaval",
+      estonia: "Eesti",
+      finland: "Soome",
+      photosHeader: "Fotod",
+      pedigreeHeader: "A-pesakonna sugupuu",
+      parents: "1. põlvkond",
+      grandParents: "2. põlvkond",
+      greatGrandParents: "3. põlvkond",
     },
     contact: {
       title: "Võtke ühendust",
@@ -452,6 +498,12 @@ export const translations = {
           "Наша титулованная чемпионка — элегантная, целеустремленная и яркая.",
         link: "Читать её историю →",
       },
+      armageddonsHope: {
+        breed: "Доберман · Щенок",
+        blurb:
+          "Родился 25.07.2026 — новый член нашей стаи, полный любопытства и надежд.",
+        link: "Читать далее →",
+      },
     },
     freya: {
       titlesHeader: "Заголовки",
@@ -512,6 +564,14 @@ export const translations = {
       p2: "Наша Сахара также начала прекрасный путь в мире выставок. Уже в возрасте 15 месяцев она завоевала множество престижных титулов, включая титул Международного юного чемпиона C.I.B.-J. Эти достижения подтверждают её великолепные качества и знаменуют собой лишь начало красивой и многообещающей выставочной карьеры.",
       p3: "Но для нас Сахара — это гораздо больше, чем её выдающееся происхождение, благородная родословная или выставочные успехи. Она — любимый член семьи, собака с нежным сердцем, радостным нравом и полным достоинства характером, которая приносит в каждый наш день радость, гордость и бесконечно много тёплых моментов.",
     },
+    armageddonsHope: {
+      title: "Dobdog Elegance Armageddons Hope",
+      byline: "Родился 25.07.2026",
+      photosHeader: "Фотографии",
+      p0: "Dobdog Elegance Armageddons Hope — новый член нашей стаи, родившийся 25 июля 2026 года. Уже с первых дней этот малыш проявляет искру любопытства и уверенности, обещающую многое впереди.",
+      p1: "Растя в окружении любви, бережного воспитания и активной социализации, Armageddons Hope воспитывается так же, как и каждый щенок DobDog Elegance — с терпением, заботой и вниманием к здоровому, уравновешенному будущему.",
+      p2: "По мере того как идут недели, мы будем обновлять эту страницу новыми фотографиями, важными моментами и историями о том, как этот щенок растёт и познаёт мир.",
+    },
     puppies: {
       badge: "Запросы приветствуются",
       title: "Raise them with knowledge, patience and love.",
@@ -522,6 +582,15 @@ export const translations = {
       p2: "Пометы бывают не всегда — рекомендуем зарегистрировать интерес заранее.",
       p3: "Текущая доступность: свяжитесь с нами для актуальной информации.",
       cta: "Запросить о щенках",
+      aLitterHeader: "Помёт A",
+      available: "Доступен",
+      estonia: "Эстония",
+      finland: "Финляндия",
+      photosHeader: "Фотографии",
+      pedigreeHeader: "Родословная помёта A",
+      parents: "1-е поколение",
+      grandParents: "2-е поколение",
+      greatGrandParents: "3-е поколение",
     },
     contact: {
       title: "Свяжитесь с нами",
@@ -567,6 +636,10 @@ export function LangProvider({ children }: { children: ReactNode }) {
       setLangState(saved);
     }
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const setLang = (l: Lang) => {
     setLangState(l);
