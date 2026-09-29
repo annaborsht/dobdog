@@ -20,6 +20,11 @@ const A_LITTER: {
   available?: boolean;
 }[] = [
   {
+    id: "allegro-a-priori",
+    name: "Allegro A Priori",
+    available: true,
+  },
+  {
     id: "armageddons-hope",
     name: "Armageddons Hope",
     href: "/our-dogs/armageddons_hope",
@@ -31,11 +36,6 @@ const A_LITTER: {
     name: "A Rose Garden",
     flag: "🇪🇪",
     locationKey: "estonia",
-  },
-  {
-    id: "allegro-a-priori",
-    name: "Allegro A Priori",
-    available: true,
   },
   {
     id: "anouchka-at-ozone",
