@@ -862,14 +862,44 @@ a {
 }
 
 .litter-roster-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.litter-roster-select {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
   padding: 0.9rem 1.25rem;
   background: var(--cream);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.litter-roster-select:hover {
+  background: var(--parchment);
+}
+
+.litter-roster-item:has(.litter-roster-select.active) {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.litter-roster-select.active {
+  background: var(--parchment);
+}
+
+.litter-roster-select.active .litter-puppy-name {
+  color: var(--rust);
 }
 
 .litter-puppy-name {

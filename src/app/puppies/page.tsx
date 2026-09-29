@@ -1,39 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
-import { useState, useRef, MouseEvent, TouchEvent, KeyboardEvent } from "react";
+import { useState, MouseEvent } from "react";
 import { useLang } from "@/components/LangContext";
 import PedigreeTree, { type PedigreeEntry } from "@/components/PedigreeTree";
+import PhotoGallery, { type GalleryPhoto } from "@/components/PhotoGallery";
 
-const PUPPY_PHOTOS: {
-  id: string;
-  src: string;
-  alt: string;
-  caption?: string;
-}[] = [
-  {
-    id: "photo-1",
-    src: "/images/puppies/1.png",
-    alt: "Puppy",
-    caption:
-      "Allegro on toreda iseloomuga dobermannipoiss, kes otsib tõsise huviga armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
-  },
-  {
-    id: "photo-2",
-    src: "/images/puppies/2.png",
-    alt: "Puppy",
-  },
-  {
-    id: "photo-3",
-    src: "/images/puppies/3.png",
-    alt: "Puppy",
-  },
-  {
-    id: "photo-4",
-    src: "/images/puppies/4.png",
-    alt: "Puppy",
-  },
-];
+const BLOB_BASE_URL = "https://mmwjaafneskfdl7c.public.blob.vercel-storage.com";
 
 const A_LITTER: {
   id: string;
@@ -42,11 +15,20 @@ const A_LITTER: {
   flag?: string;
   locationKey?: "estonia" | "finland";
   available?: boolean;
+  caption?: string;
+  photos: GalleryPhoto[];
 }[] = [
   {
     id: "allegro-a-priori",
     name: "Allegro A Priori",
     available: true,
+    caption:
+      "Allegro on toreda iseloomuga dobermannipoiss, kes otsib tõsise huviga armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
+    photos: ["allegro_841", "allegro_852"].map((id) => ({
+      id,
+      src: `${BLOB_BASE_URL}/allegro/${id}.jpg`,
+      alt: "Allegro A Priori",
+    })),
   },
   {
     id: "armageddons-hope",
@@ -54,18 +36,35 @@ const A_LITTER: {
     href: "/our-dogs/armageddons_hope",
     flag: "🇪🇪",
     locationKey: "estonia",
+    photos: ["armageddon_173", "armageddon_716", "armageddon_793"].map(
+      (id) => ({
+        id,
+        src: `${BLOB_BASE_URL}/armageddons_hope/${id}.jpg`,
+        alt: "Armageddons Hope",
+      }),
+    ),
   },
   {
     id: "a-rose-garden",
     name: "A Rose Garden",
     flag: "🇪🇪",
     locationKey: "estonia",
+    photos: ["roosi_634", "roosi_690", "roosi_682"].map((id) => ({
+      id,
+      src: `${BLOB_BASE_URL}/roosi/${id}.jpg`,
+      alt: "A Rose Garden",
+    })),
   },
   {
     id: "anouchka-at-ozone",
     name: "Anouchka At Ozone",
     flag: "🇫🇮",
     locationKey: "finland",
+    photos: ["anouchka_039", "anouchka_6007", "anouchka_075"].map((id) => ({
+      id,
+      src: `${BLOB_BASE_URL}/anouchka/${id}.jpg`,
+      alt: "Anouchka At Ozone",
+    })),
   },
 ];
 
@@ -182,30 +181,9 @@ export default function PuppiesPage() {
   const [transformOrigin, setTransformOrigin] =
     useState<string>("center center");
 
-  const [lightboxPhoto, setLightboxPhoto] = useState<
-    (typeof PUPPY_PHOTOS)[number] | null
-  >(null);
-
-  const [slideIndex, setSlideIndex] = useState(0);
-  const touchStartX = useRef(0);
-
-  const goTo = (i: number) =>
-    setSlideIndex((i + PUPPY_PHOTOS.length) % PUPPY_PHOTOS.length);
-  const nextSlide = () => goTo(slideIndex + 1);
-  const prevSlide = () => goTo(slideIndex - 1);
-
-  const handleTouchStart = (e: TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-  const handleTouchEnd = (e: TouchEvent) => {
-    const diff = e.changedTouches[0].clientX - touchStartX.current;
-    if (diff > 50) prevSlide();
-    if (diff < -50) nextSlide();
-  };
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "ArrowLeft") prevSlide();
-    if (e.key === "ArrowRight") nextSlide();
-  };
+  const [selectedPuppyId, setSelectedPuppyId] = useState(A_LITTER[0].id);
+  const selectedPuppy =
+    A_LITTER.find((puppy) => puppy.id === selectedPuppyId) ?? A_LITTER[0];
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const { left, top, width, height } =
@@ -226,26 +204,40 @@ export default function PuppiesPage() {
         <ul className="litter-roster">
           {A_LITTER.map((puppy) => (
             <li key={puppy.id} className="litter-roster-item">
-              <span className="litter-puppy-name">
-                {puppy.href ? (
-                  <Link href={puppy.href}>{puppy.name}</Link>
+              <button
+                type="button"
+                className={`litter-roster-select ${
+                  puppy.id === selectedPuppyId ? "active" : ""
+                }`}
+                onClick={() => setSelectedPuppyId(puppy.id)}
+              >
+                <span className="litter-puppy-name">{puppy.name}</span>
+                {puppy.available ? (
+                  <span className="cta-badge">{p.available}</span>
                 ) : (
-                  puppy.name
-                )}
-              </span>
-              {puppy.available ? (
-                <span className="cta-badge">{p.available}</span>
-              ) : (
-                <span className="litter-puppy-location">
-                  {puppy.locationKey === "finland" ? p.finland : p.estonia}
-                  <span className="puppy-flag" aria-hidden="true">
-                    {puppy.flag}
+                  <span className="litter-puppy-location">
+                    {puppy.locationKey === "finland" ? p.finland : p.estonia}
+                    <span className="puppy-flag" aria-hidden="true">
+                      {puppy.flag}
+                    </span>
                   </span>
-                </span>
-              )}
+                )}
+              </button>
             </li>
           ))}
         </ul>
+
+        <PhotoGallery header={selectedPuppy.name} photos={selectedPuppy.photos} />
+
+        {selectedPuppy.caption && (
+          <p className="photo-slider-caption">{selectedPuppy.caption}</p>
+        )}
+
+        {selectedPuppy.href && (
+          <Link href={selectedPuppy.href} className="source-link">
+            {selectedPuppy.name} →
+          </Link>
+        )}
 
         <h2>{p.photosHeader}</h2>
 
@@ -261,76 +253,6 @@ export default function PuppiesPage() {
             style={{ transformOrigin }}
           />
         </div>
-
-        <div className="sahara-photos">
-          <div
-            className="photo-slider"
-            tabIndex={0}
-            onKeyDown={handleKeyDown}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div className="photo-slider-frame">
-              <button
-                className="photo-slider-slide"
-                onClick={() => setLightboxPhoto(PUPPY_PHOTOS[slideIndex])}
-              >
-                <img
-                  key={PUPPY_PHOTOS[slideIndex].src}
-                  src={PUPPY_PHOTOS[slideIndex].src}
-                  alt={PUPPY_PHOTOS[slideIndex].alt}
-                />
-              </button>
-
-              {PUPPY_PHOTOS.length > 1 && (
-                <>
-                  <button
-                    className="photo-slider-arrow prev"
-                    onClick={prevSlide}
-                    aria-label="Previous photo"
-                  >
-                    ‹
-                  </button>
-                  <button
-                    className="photo-slider-arrow next"
-                    onClick={nextSlide}
-                    aria-label="Next photo"
-                  >
-                    ›
-                  </button>
-                </>
-              )}
-            </div>
-
-            {PUPPY_PHOTOS.length > 1 && (
-              <div className="photo-slider-dots">
-                {PUPPY_PHOTOS.map((photo, i) => (
-                  <button
-                    key={photo.id}
-                    className={`photo-slider-dot ${i === slideIndex ? "active" : ""}`}
-                    onClick={() => goTo(i)}
-                    aria-label={`Go to photo ${i + 1}`}
-                  />
-                ))}
-              </div>
-            )}
-
-            {PUPPY_PHOTOS[slideIndex].caption && (
-              <p className="photo-slider-caption">
-                {PUPPY_PHOTOS[slideIndex].caption}
-              </p>
-            )}
-          </div>
-        </div>
-
-        {lightboxPhoto && (
-          <div
-            className="photo-lightbox"
-            onClick={() => setLightboxPhoto(null)}
-          >
-            <img src={lightboxPhoto.src} alt={lightboxPhoto.alt} />
-          </div>
-        )}
 
         <PedigreeTree
           header={p.pedigreeHeader}
