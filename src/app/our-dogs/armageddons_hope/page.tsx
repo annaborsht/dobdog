@@ -3,18 +3,13 @@ import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import PhotoGallery from "@/components/PhotoGallery";
 
-// TODO: replace with your actual Vercel Blob store base URL once the
-// photos are uploaded, e.g.
-// "https://<your-store-id>.public.blob.vercel-storage.com/armageddons_hope"
 const PHOTO_BASE_URL =
-  "https://mmwjaafneskfdl7c.public.blob.vercel-storage.com/armageddons_hope/compressed";
+  "https://mmwjaafneskfdl7c.public.blob.vercel-storage.com/armageddons_hope";
 
 const ARMAGEDDONS_HOPE_PHOTOS = [
-  "6T1A5173",
-  "6T1A5570",
-  "6T1A5716",
-  "6T1A5744",
-  "6T1A5781",
+  "armageddon_173",
+  "armageddon_716",
+  "armageddon_793",
 ].map((id) => ({
   id,
   src: `${PHOTO_BASE_URL}/${id}.jpg`,
