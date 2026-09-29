@@ -5,11 +5,35 @@ import { useState, useRef, MouseEvent, TouchEvent, KeyboardEvent } from "react";
 import { useLang } from "@/components/LangContext";
 import PedigreeTree, { type PedigreeEntry } from "@/components/PedigreeTree";
 
-const PUPPY_PHOTOS = Array.from({ length: 4 }, (_, i) => ({
-  id: `photo-${i + 1}`,
-  src: `/images/puppies/${i + 1}.png`,
-  alt: "Puppy",
-}));
+const PUPPY_PHOTOS: {
+  id: string;
+  src: string;
+  alt: string;
+  caption?: string;
+}[] = [
+  {
+    id: "photo-1",
+    src: "/images/puppies/1.png",
+    alt: "Puppy",
+    caption:
+      "Allegro on toreda iseloomuga dobermannipoiss, kes otsib tõsise huviga armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
+  },
+  {
+    id: "photo-2",
+    src: "/images/puppies/2.png",
+    alt: "Puppy",
+  },
+  {
+    id: "photo-3",
+    src: "/images/puppies/3.png",
+    alt: "Puppy",
+  },
+  {
+    id: "photo-4",
+    src: "/images/puppies/4.png",
+    alt: "Puppy",
+  },
+];
 
 const A_LITTER: {
   id: string;
@@ -289,6 +313,12 @@ export default function PuppiesPage() {
                   />
                 ))}
               </div>
+            )}
+
+            {PUPPY_PHOTOS[slideIndex].caption && (
+              <p className="photo-slider-caption">
+                {PUPPY_PHOTOS[slideIndex].caption}
+              </p>
             )}
           </div>
         </div>
