@@ -811,6 +811,9 @@ a {
 }
 
 .puppies-cta h2 {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+  color: var(--rust);
   margin-bottom: 2vw;
 }
 
