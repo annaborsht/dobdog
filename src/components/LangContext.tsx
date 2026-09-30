@@ -187,6 +187,8 @@ export const translations = {
       available: "Available",
       estonia: "Estonia",
       finland: "Finland",
+      allegroCaption:
+        "Allegro is a Dobermann boy with a lovely character, seriously looking for a loving home. He is suitable both for sport and for participating in shows.",
       photosHeader: "Photos",
       pedigreeHeader: "A-litter's pedigree",
       parents: "1. generation",
@@ -385,6 +387,8 @@ export const translations = {
       available: "Saadaval",
       estonia: "Eesti",
       finland: "Soome",
+      allegroCaption:
+        "Allegro on toreda iseloomuga dobermannipoiss, kes otsib tõsise huviga armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
       photosHeader: "Fotod",
       pedigreeHeader: "A-pesakonna sugupuu",
       parents: "1. põlvkond",
@@ -586,6 +590,8 @@ export const translations = {
       available: "Доступен",
       estonia: "Эстония",
       finland: "Финляндия",
+      allegroCaption:
+        "Аллегро — доберман-мальчик с приятным характером, который серьёзно ищет любящий дом. Он подходит как для спорта, так и для участия в выставках.",
       photosHeader: "Фотографии",
       pedigreeHeader: "Родословная помёта A",
       parents: "1-е поколение",
