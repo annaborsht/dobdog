@@ -15,15 +15,12 @@ const A_LITTER: {
   flag?: string;
   locationKey?: "estonia" | "finland";
   available?: boolean;
-  caption?: string;
   photos: GalleryPhoto[];
 }[] = [
   {
     id: "allegro-a-priori",
     name: "Allegro A Priori",
     available: true,
-    caption:
-      "Allegro on toreda iseloomuga dobermannipoiss, kes otsib tõsise huviga armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
     photos: ["allegro_841", "allegro_852"].map((id) => ({
       id,
       src: `${BLOB_BASE_URL}/allegro/${id}.jpg`,
@@ -229,8 +226,8 @@ export default function PuppiesPage() {
 
         <PhotoGallery header={selectedPuppy.name} photos={selectedPuppy.photos} />
 
-        {selectedPuppy.caption && (
-          <p className="photo-slider-caption">{selectedPuppy.caption}</p>
+        {selectedPuppy.id === "allegro-a-priori" && (
+          <p className="photo-slider-caption">{p.allegroCaption}</p>
         )}
 
         {selectedPuppy.href && (
