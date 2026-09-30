@@ -19,6 +19,7 @@ export const translations = {
       ourDogs: "Our dogs",
       puppies: "Puppies",
       contact: "Contact",
+      privacy: "Privacy Policy",
     },
     home: {
       subtitle: "Bred with heart, for hearts",
@@ -222,6 +223,7 @@ export const translations = {
       ourDogs: "Meie koerad",
       puppies: "Kutsikad",
       contact: "Kontakt",
+      privacy: "Privaatsuspoliitika",
     },
     home: {
       subtitle: "Südamest südamesse.",
@@ -422,6 +424,7 @@ export const translations = {
       ourDogs: "Наши собаки",
       puppies: "Щенки",
       contact: "Контакт",
+      privacy: "Политика конфиденциальности",
     },
     home: {
       subtitle: "Выращены с сердцем, для сердец",

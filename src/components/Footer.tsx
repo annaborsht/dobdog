@@ -29,6 +29,9 @@ export default function Footer() {
           <Link href="/contact" className="footer-link">
             {t.nav.contact}
           </Link>
+          <Link href="/privacy" className="footer-link">
+            {t.nav.privacy}
+          </Link>
         </nav>
         <p className="footer-copy">
           © {new Date().getFullYear()} DobDog Elegance. All rights reserved.
