@@ -1396,6 +1396,10 @@ a {
   width: fit-content;
   margin: 1.5rem auto 2.5rem;
 }
+
+.puppies-cta .source-link {
+  margin: 1.5rem auto 2.5rem;
+}
 .photo-slider {
   outline: none;
   max-width: 100%;
