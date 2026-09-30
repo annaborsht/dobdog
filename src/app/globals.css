@@ -932,20 +932,23 @@ a {
 .puppy-flag {
   display: inline-block;
   font-size: 1.2rem;
-  transform-origin: 30% 70%;
-  animation: flagWave 2.4s ease-in-out infinite;
+  transform-origin: 0% 50%;
+  animation: flagWave 1.8s ease-in-out infinite;
 }
 
 @keyframes flagWave {
   0%,
   100% {
-    transform: rotate(0deg);
+    transform: skewY(0deg) scaleY(1);
   }
   25% {
-    transform: rotate(-10deg);
+    transform: skewY(10deg) scaleY(0.94);
+  }
+  50% {
+    transform: skewY(0deg) scaleY(1);
   }
   75% {
-    transform: rotate(10deg);
+    transform: skewY(-10deg) scaleY(0.94);
   }
 }
 
