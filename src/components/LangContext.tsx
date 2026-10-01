@@ -372,7 +372,7 @@ export const translations = {
       byline: "Sündinud 25.07.2026",
       photosHeader: "Fotod",
       p0: "Dobdog Elegance Armageddons Hope on meie pere uusim liige, kes on sündinud 25. juulil 2026. Juba esimestest päevadest peale on see pisike näidanud uudishimu ja enesekindlust, mis annab tuleviku osas palju lootust.",
-      p1: "Armastuse, hoolsa juhendamise ja rohke sotsialiseerimise keskel üles kasvades kasvatatakse Armageddonsi samamoodi nagu iga teist DobDog Elegance'i kutsikat — kannatlikkuse, hoolega ning pilguga tervele ja tasakaalukale tulevikule.",
+      p1: "Armastuse, hoolsa juhendamise ja rohke sotsialiseerimise keskel üles kasvades kasvatatakse Armageddoni samamoodi nagu iga teist DobDog Elegance'i kutsikat — kannatlikkuse, hoolega ning pilguga tervele ja tasakaalukale tulevikule.",
       p2: "Täiendame seda lehte jooksvalt uute fotode, saavutuste ja lugudega, vastavalt sellele, kuidas see poiss kasvab ja maailma avastab.",
     },
     puppies: {
