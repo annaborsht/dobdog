@@ -34,7 +34,7 @@ const A_LITTER: {
     href: "/our-dogs/armageddons_hope",
     flag: "🇪🇪",
     locationKey: "estonia",
-    photos: ["armageddon_173", "armageddon_716", "armageddon_793"].map(
+    photos: ["armageddon_173", "armageddon_793"].map(
       (id) => ({
         id,
         src: `${BLOB_BASE_URL}/armageddons_hope/${id}.jpg`,
@@ -58,7 +58,7 @@ const A_LITTER: {
     name: "Anouchka At Ozone",
     flag: "🇫🇮",
     locationKey: "finland",
-    photos: ["anouchka_039", "anouchka_6007", "anouchka_075"].map((id) => ({
+    photos: ["anouchka_039", "anouchka_075"].map((id) => ({
       id,
       src: `${BLOB_BASE_URL}/anouchka/${id}.jpg`,
       alt: "Anouchka At Ozone",
