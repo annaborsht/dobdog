@@ -369,7 +369,7 @@ export const translations = {
     },
     armageddonsHope: {
       title: "Dobdog Elegance Armageddons Hope",
-      byline: "Sündinud 25.07.2026",
+      byline: "DOB 25.07.2026",
       photosHeader: "Fotod",
       p0: "Dobdog Elegance Armageddons Hope on meie pere uusim liige, kes on sündinud 25. juulil 2026. Juba esimestest päevadest peale on see pisike näidanud uudishimu ja enesekindlust, mis annab tuleviku osas palju lootust.",
       p1: "Armastuse, hoolsa juhendamise ja rohke sotsialiseerimise keskel üles kasvades kasvatatakse Armageddoni samamoodi nagu iga teist DobDog Elegance'i kutsikat — kannatlikkuse, hoolega ning pilguga tervele ja tasakaalukale tulevikule.",
@@ -573,7 +573,7 @@ export const translations = {
     },
     armageddonsHope: {
       title: "Dobdog Elegance Armageddons Hope",
-      byline: "Родился 25.07.2026",
+      byline: "DOB 25.07.2026",
       photosHeader: "Фотографии",
       p0: "Dobdog Elegance Armageddons Hope — новый член нашей стаи, родившийся 25 июля 2026 года. Уже с первых дней этот малыш проявляет искру любопытства и уверенности, обещающую многое впереди.",
       p1: "Растя в окружении любви, бережного воспитания и активной социализации, Armageddons Hope воспитывается так же, как и каждый щенок DobDog Elegance — с терпением, заботой и вниманием к здоровому, уравновешенному будущему.",
