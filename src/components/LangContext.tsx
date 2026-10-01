@@ -170,6 +170,7 @@ export const translations = {
       title: "Dobdog Elegance Armageddons Hope",
       byline: "DOB 25.07.2026",
       photosHeader: "Photos",
+      pedigreeHeader: "Armageddons Hope's pedigree",
       p0: "Dobdog Elegance Armageddons Hope is the newest member of our pack, born on the 25th of July, 2026. From the very first days, this little one has already shown a spark of curiosity and confidence that promises great things ahead.",
       p1: "Growing up surrounded by love, gentle guidance, and plenty of socialization, Armageddons Hope is being raised the same way every DobDog Elegance puppy is — with patience, care, and an eye toward a healthy, balanced future.",
       p2: "As the weeks go on, we'll be updating this page with more photos, milestones, and stories as this pup continues to grow and explore the world.",
@@ -188,6 +189,7 @@ export const translations = {
       available: "Available",
       estonia: "Estonia",
       finland: "Finland",
+      puppyAge: "Puppy age: 7 weeks",
       allegroCaption:
         "Allegro is a Dobermann boy with a lovely character, seriously looking for a loving home. He is suitable both for sport and for participating in shows.",
       photosHeader: "Photos",
@@ -369,11 +371,12 @@ export const translations = {
     },
     armageddonsHope: {
       title: "Dobdog Elegance Armageddons Hope",
-      byline: "Sündinud 25.07.2026",
+      byline: "DOB 25.07.2026",
       photosHeader: "Fotod",
-      p0: "Dobdog Elegance Armageddons Hope on meie karja uusim liige, sündinud 25. juulil 2026. Juba esimestest päevadest peale on see pisike näidanud uudishimu ja enesekindlust, mis lubab tulevikus suuri asju.",
-      p1: "Armastuse, hoolsa juhendamise ja rohke sotsialiseerimise keskel üles kasvades kasvatatakse Armageddons Hope'i samamoodi nagu iga teist DobDog Elegance'i kutsikat — kannatlikkuse, hoolega ning pilguga tervele ja tasakaalukale tulevikule.",
-      p2: "Nädalate möödudes täiendame seda lehte uute fotode, verstapostide ja lugudega, kui see kutsikas kasvab ja maailma avastab.",
+      pedigreeHeader: "Armageddoni sugupuu",
+      p0: "Dobdog Elegance Armageddons Hope on meie pere uusim liige, kes on sündinud 25. juulil 2026. Juba esimestest päevadest peale on see pisike näidanud uudishimu ja enesekindlust, mis annab tuleviku osas palju lootust.",
+      p1: "Armastuse, hoolsa juhendamise ja rohke sotsialiseerimise keskel üles kasvades kasvatatakse Armageddoni samamoodi nagu iga teist DobDog Elegance'i kutsikat — kannatlikkuse, hoolega ning pilguga tervele ja tasakaalukale tulevikule.",
+      p2: "Täiendame seda lehte jooksvalt uute fotode, saavutuste ja lugudega, vastavalt sellele, kuidas see poiss kasvab ja maailma avastab.",
     },
     puppies: {
       badge: "Päringud oodatud",
@@ -389,6 +392,7 @@ export const translations = {
       available: "Saadaval",
       estonia: "Eesti",
       finland: "Soome",
+      puppyAge: "Kutsika vanus: 7 nädalat",
       allegroCaption:
         "Allegro on toreda iseloomuga dobermannipoiss, kes otsib tõsise huviga armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
       photosHeader: "Fotod",
@@ -573,8 +577,9 @@ export const translations = {
     },
     armageddonsHope: {
       title: "Dobdog Elegance Armageddons Hope",
-      byline: "Родился 25.07.2026",
+      byline: "DOB 25.07.2026",
       photosHeader: "Фотографии",
+      pedigreeHeader: "Родословная Armageddons Hope",
       p0: "Dobdog Elegance Armageddons Hope — новый член нашей стаи, родившийся 25 июля 2026 года. Уже с первых дней этот малыш проявляет искру любопытства и уверенности, обещающую многое впереди.",
       p1: "Растя в окружении любви, бережного воспитания и активной социализации, Armageddons Hope воспитывается так же, как и каждый щенок DobDog Elegance — с терпением, заботой и вниманием к здоровому, уравновешенному будущему.",
       p2: "По мере того как идут недели, мы будем обновлять эту страницу новыми фотографиями, важными моментами и историями о том, как этот щенок растёт и познаёт мир.",
@@ -593,6 +598,7 @@ export const translations = {
       available: "Доступен",
       estonia: "Эстония",
       finland: "Финляндия",
+      puppyAge: "Возраст щенка: 7 недель",
       allegroCaption:
         "Аллегро — доберман-мальчик с приятным характером, который серьёзно ищет любящий дом. Он подходит как для спорта, так и для участия в выставках.",
       photosHeader: "Фотографии",

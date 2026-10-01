@@ -2,14 +2,16 @@
 import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import PhotoGallery from "@/components/PhotoGallery";
+import PedigreeTree from "@/components/PedigreeTree";
+import { A_LITTER_PEDIGREE } from "@/lib/pedigrees";
 
 const PHOTO_BASE_URL =
   "https://mmwjaafneskfdl7c.public.blob.vercel-storage.com/armageddons_hope";
 
 const ARMAGEDDONS_HOPE_PHOTOS = [
   "armageddon_173",
-  "armageddon_716",
   "armageddon_793",
+  "armageddon_5570",
 ].map((id) => ({
   id,
   src: `${PHOTO_BASE_URL}/${id}.jpg`,
@@ -19,6 +21,7 @@ const ARMAGEDDONS_HOPE_PHOTOS = [
 export default function ArmageddonsHopePage() {
   const { t } = useLang();
   const a = t.armageddonsHope;
+  const p = t.puppies;
 
   return (
     <>
@@ -34,6 +37,18 @@ export default function ArmageddonsHopePage() {
         <p>{a.p0}</p>
         <p>{a.p1}</p>
         <p>{a.p2}</p>
+
+        <RevealOnScroll>
+          <PedigreeTree
+            header={a.pedigreeHeader}
+            entries={A_LITTER_PEDIGREE}
+            labels={{
+              parents: p.parents,
+              grandParents: p.grandParents,
+              greatGrandParents: p.greatGrandParents,
+            }}
+          />
+        </RevealOnScroll>
 
         <RevealOnScroll>
           <PhotoGallery

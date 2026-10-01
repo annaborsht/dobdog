@@ -12,9 +12,11 @@ export interface GalleryPhoto {
 export default function PhotoGallery({
   photos,
   header,
+  subheader,
 }: {
   photos: GalleryPhoto[];
   header?: string;
+  subheader?: string;
 }) {
   const [lightboxPhoto, setLightboxPhoto] = useState<GalleryPhoto | null>(
     null,
@@ -23,6 +25,7 @@ export default function PhotoGallery({
   return (
     <div className="sahara-photos">
       {header && <h2>{header}</h2>}
+      {subheader && <p className="photo-gallery-subheader">{subheader}</p>}
 
       <div className="photos-grid">
         {photos.map((photo, i) => (

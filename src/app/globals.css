@@ -1547,6 +1547,13 @@ a {
   background: var(--gold);
 }
 
+.photo-gallery-subheader {
+  margin: -0.25rem 0 1rem;
+  color: var(--slate);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 .photo-slider-caption {
   max-width: 420px;
   margin: 1rem auto 0;
