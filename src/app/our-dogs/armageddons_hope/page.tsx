@@ -10,7 +10,6 @@ const PHOTO_BASE_URL =
 
 const ARMAGEDDONS_HOPE_PHOTOS = [
   "armageddon_173",
-  "armageddon_716",
   "armageddon_793",
 ].map((id) => ({
   id,
