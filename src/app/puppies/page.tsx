@@ -119,7 +119,11 @@ export default function PuppiesPage() {
           ))}
         </ul>
 
-        <PhotoGallery header={selectedPuppy.name} photos={selectedPuppy.photos} />
+        <PhotoGallery
+          header={selectedPuppy.name}
+          subheader={p.puppyAge}
+          photos={selectedPuppy.photos}
+        />
 
         {selectedPuppy.id === "allegro-a-priori" && (
           <p className="photo-slider-caption">{p.allegroCaption}</p>
