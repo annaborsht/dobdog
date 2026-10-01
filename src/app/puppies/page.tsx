@@ -34,7 +34,7 @@ const A_LITTER: {
     href: "/our-dogs/armageddons_hope",
     flag: "🇪🇪",
     locationKey: "estonia",
-    photos: ["armageddon_173", "armageddon_793"].map(
+    photos: ["armageddon_173", "armageddon_793", "armageddon_5570"].map(
       (id) => ({
         id,
         src: `${BLOB_BASE_URL}/armageddons_hope/${id}.jpg`,

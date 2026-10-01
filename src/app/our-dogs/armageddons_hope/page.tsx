@@ -11,6 +11,7 @@ const PHOTO_BASE_URL =
 const ARMAGEDDONS_HOPE_PHOTOS = [
   "armageddon_173",
   "armageddon_793",
+  "armageddon_5570",
 ].map((id) => ({
   id,
   src: `${PHOTO_BASE_URL}/${id}.jpg`,
