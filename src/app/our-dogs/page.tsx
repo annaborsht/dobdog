@@ -12,7 +12,7 @@ export default function OurDogsPage() {
     { name: "Mia", data: o.mia, href: "/our-dogs/mia" },
     { name: "Sahara", data: o.sahara, href: "/our-dogs/sahara" },
     {
-      name: "Armageddons Hope",
+      name: "Armageddon",
       data: o.armageddonsHope,
       href: "/our-dogs/armageddons_hope",
     },

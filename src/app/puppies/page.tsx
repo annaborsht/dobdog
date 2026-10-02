@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, MouseEvent } from "react";
 import { useLang } from "@/components/LangContext";
+import Flag, { type FlagCode } from "@/components/Flag";
 import PedigreeTree from "@/components/PedigreeTree";
 import { A_LITTER_PEDIGREE } from "@/lib/pedigrees";
 import PhotoGallery, { type GalleryPhoto } from "@/components/PhotoGallery";
@@ -13,7 +14,7 @@ const A_LITTER: {
   id: string;
   name: string;
   href?: string;
-  flag?: string;
+  flag?: FlagCode;
   locationKey?: "estonia" | "finland";
   available?: boolean;
   photos: GalleryPhoto[];
@@ -32,7 +33,7 @@ const A_LITTER: {
     id: "armageddons-hope",
     name: "Armageddons Hope",
     href: "/our-dogs/armageddons_hope",
-    flag: "🇪🇪",
+    flag: "ee",
     locationKey: "estonia",
     photos: ["armageddon_173", "armageddon_793", "armageddon_5570"].map(
       (id) => ({
@@ -45,7 +46,7 @@ const A_LITTER: {
   {
     id: "a-rose-garden",
     name: "A Rose Garden",
-    flag: "🇪🇪",
+    flag: "ee",
     locationKey: "estonia",
     photos: ["roosi_634", "roosi_690", "roosi_682"].map((id) => ({
       id,
@@ -56,7 +57,7 @@ const A_LITTER: {
   {
     id: "anouchka-at-ozone",
     name: "Anouchka At Ozone",
-    flag: "🇫🇮",
+    flag: "fi",
     locationKey: "finland",
     photos: ["anouchka_039", "anouchka_075", "anouchka_4873"].map((id) => ({
       id,
@@ -110,7 +111,7 @@ export default function PuppiesPage() {
                   <span className="litter-puppy-location">
                     {puppy.locationKey === "finland" ? p.finland : p.estonia}
                     <span className="puppy-flag" aria-hidden="true">
-                      {puppy.flag}
+                      {puppy.flag && <Flag code={puppy.flag} />}
                     </span>
                   </span>
                 )}
@@ -134,8 +135,6 @@ export default function PuppiesPage() {
             {selectedPuppy.name} →
           </Link>
         )}
-
-        <h2>{p.photosHeader}</h2>
 
         <div
           className="overflow-hidden rounded-lg cursor-zoom-in"
