@@ -393,6 +393,11 @@ a {
 
 .article-hero--puppies {
   justify-content: flex-end;
+  padding-bottom: 1rem;
+}
+
+.article-hero--puppies h1 {
+  margin-bottom: 0;
 }
 
 .article-hero--ourdogs {
