@@ -189,7 +189,7 @@ export const translations = {
       available: "Available",
       estonia: "Estonia",
       finland: "Finland",
-      puppyAge: "Puppy age: 7 weeks",
+      puppyAge: "Age: 7 weeks",
       allegroCaption:
         "Allegro is a Dobermann boy with a lovely character, seriously looking for a loving home. He is suitable both for sport and for participating in shows.",
       photosHeader: "Photos",
@@ -392,7 +392,7 @@ export const translations = {
       available: "Saadaval",
       estonia: "Eesti",
       finland: "Soome",
-      puppyAge: "Kutsika vanus: 7 nädalat",
+      puppyAge: "Vanus: 7 nädalat",
       allegroCaption:
         "Allegro on toreda iseloomuga dobermannipoiss, kes otsib tõsise huviga armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
       photosHeader: "Fotod",
@@ -598,7 +598,7 @@ export const translations = {
       available: "Доступен",
       estonia: "Эстония",
       finland: "Финляндия",
-      puppyAge: "Возраст щенка: 7 недель",
+      puppyAge: "Возраст: 7 недель",
       allegroCaption:
         "Аллегро — доберман-мальчик с приятным характером, который серьёзно ищет любящий дом. Он подходит как для спорта, так и для участия в выставках.",
       photosHeader: "Фотографии",

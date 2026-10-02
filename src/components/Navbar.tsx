@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useLang, type Lang } from "./LangContext";
+import Flag, { type FlagCode } from "./Flag";
 
-const LANGS: { code: Lang; flag: string; label: string }[] = [
-  { code: "et", flag: "🇪🇪", label: "Eesti" },
-  { code: "en", flag: "🇬🇧", label: "English" },
-  { code: "ru", flag: "🇷🇺", label: "Русский" },
+const LANGS: { code: Lang; flag: FlagCode; label: string }[] = [
+  { code: "et", flag: "ee", label: "Eesti" },
+  { code: "en", flag: "gb", label: "English" },
+  { code: "ru", flag: "ru", label: "Русский" },
 ];
 
 export default function Navbar() {
@@ -89,7 +90,7 @@ export default function Navbar() {
                     href="/our-dogs/armageddons_hope"
                     className="dropdown-item"
                   >
-                    Armageddons Hope
+                    Armageddon
                   </Link>
                 </li>
               </ul>
@@ -123,7 +124,9 @@ export default function Navbar() {
               className="nav-link nav-dropdown-btn lang-btn"
               aria-label="Select language"
             >
-              <span className="lang-flag">{current.flag}</span>
+              <span className="lang-flag">
+                <Flag code={current.flag} />
+              </span>
               <span className="lang-code">{current.code.toUpperCase()}</span>
               <span className="lang-chevron">▾</span>
             </button>
@@ -138,7 +141,9 @@ export default function Navbar() {
                         setLangOpen(false);
                       }}
                     >
-                      <span className="lang-flag">{l.flag}</span>
+                      <span className="lang-flag">
+                        <Flag code={l.flag} />
+                      </span>
                       <span>{l.label}</span>
                     </button>
                   </li>
@@ -216,7 +221,7 @@ export default function Navbar() {
             className="mobile-link"
             onClick={() => setMobileOpen(false)}
           >
-            Armageddons Hope
+            Armageddon
           </Link>
 
           <Link
@@ -252,7 +257,9 @@ export default function Navbar() {
                   setMobileOpen(false);
                 }}
               >
-                <span>{l.flag}</span>
+                <span>
+                  <Flag code={l.flag} />
+                </span>
                 <span>{l.code.toUpperCase()}</span>
               </button>
             ))}
