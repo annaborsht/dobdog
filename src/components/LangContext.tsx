@@ -394,7 +394,7 @@ export const translations = {
       finland: "Soome",
       puppyAge: "Vanus: 7 nädalat",
       allegroCaption:
-        "Allegro on toreda iseloomuga dobermannipoiss, kes otsib armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
+        "Allegro on toreda iseloomuga dobermannipoiss, kes otsib tõsise huviga armastavat kodu. Ta on sobilik nii spordiks kui ka näitustel osalemiseks.",
       photosHeader: "Fotod",
       pedigreeHeader: "A-pesakonna sugupuu",
       parents: "1. põlvkond",
