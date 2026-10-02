@@ -391,6 +391,10 @@ a {
   justify-content: flex-start;
 }
 
+.article-hero--puppies {
+  justify-content: flex-end;
+}
+
 .article-hero--ourdogs {
   justify-content: flex-start;
 }

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, MouseEvent } from "react";
 import { useLang } from "@/components/LangContext";
 import PedigreeTree from "@/components/PedigreeTree";
@@ -22,7 +23,12 @@ const A_LITTER: {
     id: "allegro-a-priori",
     name: "Allegro A Priori",
     available: true,
-    photos: ["allegro_841", "allegro_852"].map((id) => ({
+    photos: [
+      "allegro_841",
+      "allegro_852",
+      "6T1A5908_resized",
+      "6T1A5241_resized",
+    ].map((id) => ({
       id,
       src: `${BLOB_BASE_URL}/allegro/${id}.jpg`,
       alt: "Allegro A Priori",
@@ -86,84 +92,98 @@ export default function PuppiesPage() {
   };
 
   return (
-    <div className="puppies-cta">
-      <h1>{p.title}</h1>
-      <h2>{p.announcement}</h2>
-
-      <section className="a-litter-section">
-        <h2>{p.aLitterHeader}</h2>
-
-        <ul className="litter-roster">
-          {A_LITTER.map((puppy) => (
-            <li key={puppy.id} className="litter-roster-item">
-              <button
-                type="button"
-                className={`litter-roster-select ${
-                  puppy.id === selectedPuppyId ? "active" : ""
-                }`}
-                onClick={() => setSelectedPuppyId(puppy.id)}
-              >
-                <span className="litter-puppy-name">{puppy.name}</span>
-                {puppy.available ? (
-                  <span className="cta-badge">{p.available}</span>
-                ) : (
-                  <span className="litter-puppy-location">
-                    {puppy.locationKey === "finland" ? p.finland : p.estonia}
-                    <span className="puppy-flag" aria-hidden="true">
-                      {puppy.flag}
-                    </span>
-                  </span>
-                )}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        <PhotoGallery
-          header={selectedPuppy.name}
-          subheader={p.puppyAge}
-          photos={selectedPuppy.photos}
+    <>
+      <div className="article-hero article-hero--puppies">
+        <Image
+          src={`${BLOB_BASE_URL}/puppies/6T1A6145_resized.jpg`}
+          alt={p.title}
+          fill
+          priority
+          sizes="100vw"
+          className="article-hero-image"
         />
-
-        {selectedPuppy.id === "allegro-a-priori" && (
-          <p className="photo-slider-caption">{p.allegroCaption}</p>
-        )}
-
-        {selectedPuppy.href && (
-          <Link href={selectedPuppy.href} className="source-link">
-            {selectedPuppy.name} →
-          </Link>
-        )}
-
-        <h2>{p.photosHeader}</h2>
-
-        <div
-          className="overflow-hidden rounded-lg cursor-zoom-in"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={() => setTransformOrigin("center center")}
-        >
-          <img
-            src="/images/puppies/poster.jpg"
-            alt={p.title}
-            className="puppies-poster w-full h-auto transition-transform duration-200 ease-out hover:scale-150"
-            style={{ transformOrigin }}
-          />
+        <div className="article-hero-content">
+          <h1>{p.title}</h1>
         </div>
+      </div>
+      <div className="puppies-cta">
+        <h2>{p.announcement}</h2>
 
-        <PedigreeTree
-          header={p.pedigreeHeader}
-          entries={A_LITTER_PEDIGREE}
-          labels={{
-            parents: p.parents,
-            grandParents: p.grandParents,
-            greatGrandParents: p.greatGrandParents,
-          }}
-        />
-      </section>
+        <section className="a-litter-section">
+          <h2>{p.aLitterHeader}</h2>
 
-      <Link href="/contact" className="submit-btn">
-        {p.cta}
-      </Link>
-    </div>
+          <ul className="litter-roster">
+            {A_LITTER.map((puppy) => (
+              <li key={puppy.id} className="litter-roster-item">
+                <button
+                  type="button"
+                  className={`litter-roster-select ${
+                    puppy.id === selectedPuppyId ? "active" : ""
+                  }`}
+                  onClick={() => setSelectedPuppyId(puppy.id)}
+                >
+                  <span className="litter-puppy-name">{puppy.name}</span>
+                  {puppy.available ? (
+                    <span className="cta-badge">{p.available}</span>
+                  ) : (
+                    <span className="litter-puppy-location">
+                      {puppy.locationKey === "finland" ? p.finland : p.estonia}
+                      <span className="puppy-flag" aria-hidden="true">
+                        {puppy.flag}
+                      </span>
+                    </span>
+                  )}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <PhotoGallery
+            header={selectedPuppy.name}
+            subheader={p.puppyAge}
+            photos={selectedPuppy.photos}
+          />
+
+          {selectedPuppy.id === "allegro-a-priori" && (
+            <p className="photo-slider-caption">{p.allegroCaption}</p>
+          )}
+
+          {selectedPuppy.href && (
+            <Link href={selectedPuppy.href} className="source-link">
+              {selectedPuppy.name} →
+            </Link>
+          )}
+
+          <h2>{p.photosHeader}</h2>
+
+          <div
+            className="overflow-hidden rounded-lg cursor-zoom-in"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={() => setTransformOrigin("center center")}
+          >
+            <img
+              src="/images/puppies/poster.jpg"
+              alt={p.title}
+              className="puppies-poster w-full h-auto transition-transform duration-200 ease-out hover:scale-150"
+              style={{ transformOrigin }}
+            />
+          </div>
+
+          <PedigreeTree
+            header={p.pedigreeHeader}
+            entries={A_LITTER_PEDIGREE}
+            labels={{
+              parents: p.parents,
+              grandParents: p.grandParents,
+              greatGrandParents: p.greatGrandParents,
+            }}
+          />
+        </section>
+
+        <Link href="/contact" className="submit-btn">
+          {p.cta}
+        </Link>
+      </div>
+    </>
   );
 }
