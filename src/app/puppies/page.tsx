@@ -32,6 +32,7 @@ const A_LITTER: {
       id,
       src: `${BLOB_BASE_URL}/allegro/${id}.jpg`,
       alt: "Allegro A Priori",
+      objectPosition: id === "6T1A5908_resized" ? "67% center" : undefined,
     })),
   },
   {
