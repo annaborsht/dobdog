@@ -391,6 +391,15 @@ a {
   justify-content: flex-start;
 }
 
+.article-hero--puppies {
+  justify-content: flex-end;
+  padding-bottom: 2.5rem;
+}
+
+.article-hero--puppies h1 {
+  margin-bottom: 0;
+}
+
 .article-hero--ourdogs {
   justify-content: flex-start;
 }

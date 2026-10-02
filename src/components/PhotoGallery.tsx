@@ -7,6 +7,7 @@ export interface GalleryPhoto {
   id: string;
   src: string;
   alt: string;
+  objectPosition?: string;
 }
 
 export default function PhotoGallery({
@@ -39,6 +40,7 @@ export default function PhotoGallery({
               src={photo.src}
               alt={photo.alt}
               fill
+              style={{ objectPosition: photo.objectPosition }}
               sizes="(max-width: 480px) 90vw, (max-width: 768px) 45vw, 220px"
             />
           </button>
