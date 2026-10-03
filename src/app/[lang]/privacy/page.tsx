@@ -1,16 +1,8 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Privacy Policy – DobDog Elegance",
-  description:
-    "How DobDog Elegance collects, uses, and protects your personal data.",
-};
-
 export default function PrivacyPage() {
   return (
     <div className="legal-page">
       <h1>Privacy Policy</h1>
-      <p className="legal-updated">Last updated: 30 September 2026</p>
+      <p className="legal-updated">Last updated: 3 October 2026</p>
 
       <p>
         DobDog Elegance (&ldquo;we&rdquo;, &ldquo;us&rdquo;), run by Heidi
@@ -35,9 +27,16 @@ export default function PrivacyPage() {
         a profile tied to you.
       </p>
       <p>
-        <strong>Language preference:</strong> if you switch the site
-        language, we remember your choice using your browser&rsquo;s local
-        storage. This stays on your device only — it is never sent to us.
+        <strong>Language preference cookie:</strong> if you switch the site
+        language, we store one small cookie named <code>dobdog-lang</code>{" "}
+        in your browser containing your choice (<code>en</code>,{" "}
+        <code>et</code> or <code>ru</code>). It is used only to show the
+        site in your chosen language on your next visit, expires after one
+        year, and contains no personal data. It is not used for tracking or
+        advertising. As it is needed only to provide the setting you asked
+        for, it does not require a consent banner; you can delete it at any
+        time in your browser settings, and the site will then simply show
+        the default language.
       </p>
 
       <h2>How we use it</h2>
