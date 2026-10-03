@@ -110,11 +110,8 @@ export default function PuppiesPage() {
       </div>
       <div className="puppies-cta">
         <p className="puppies-intro">{p.intro}</p>
-        <h2>{p.announcement}</h2>
 
         <section className="a-litter-section">
-          <h2>{p.aLitterHeader}</h2>
-
           <ul className="litter-roster">
             {A_LITTER.map((puppy) => (
               <li key={puppy.id} className="litter-roster-item">
