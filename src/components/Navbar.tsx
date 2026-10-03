@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
-import Link from "next/link";
+import Link from "./LocalizedLink";
 import { useState, useEffect } from "react";
 import { useLang, type Lang } from "./LangContext";
 import Flag, { type FlagCode } from "./Flag";

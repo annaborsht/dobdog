@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import Link from "next/link";
+import Link from "@/components/LocalizedLink";
 import Image from "next/image";
 import { useState, MouseEvent } from "react";
 import { useLang } from "@/components/LangContext";
@@ -32,7 +32,7 @@ const A_LITTER: {
     ].map((id) => ({
       id,
       src: `${BLOB_BASE_URL}/allegro/${id}.jpg`,
-      alt: "Allegro A Priori",
+      alt: "Allegro A Priori – Dobermann puppy",
       objectPosition: id === "6T1A5908_resized" ? "67% center" : undefined,
     })),
   },
@@ -46,7 +46,7 @@ const A_LITTER: {
       (id) => ({
         id,
         src: `${BLOB_BASE_URL}/armageddons_hope/${id}.jpg`,
-        alt: "Armageddons Hope",
+        alt: "Armageddons Hope – Dobermann puppy",
       }),
     ),
   },
@@ -58,7 +58,7 @@ const A_LITTER: {
     photos: ["roosi_634", "roosi_690", "roosi_682"].map((id) => ({
       id,
       src: `${BLOB_BASE_URL}/roosi/${id}.jpg`,
-      alt: "A Rose Garden",
+      alt: "A Rose Garden – Dobermann puppy",
     })),
   },
   {
@@ -69,7 +69,7 @@ const A_LITTER: {
     photos: ["anouchka_039", "anouchka_075", "anouchka_4873"].map((id) => ({
       id,
       src: `${BLOB_BASE_URL}/anouchka/${id}.jpg`,
-      alt: "Anouchka At Ozone",
+      alt: "Anouchka At Ozone – Dobermann puppy",
     })),
   },
 ];
