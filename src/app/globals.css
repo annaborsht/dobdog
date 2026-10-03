@@ -400,18 +400,46 @@ a {
   margin-bottom: 0;
 }
 
-/* Soft dark fade behind the title so it reads over the grass */
-.article-hero--puppies::before {
+/* Soft dark fade behind banner titles so they read over the photo.
+   Bottom fade where the title sits at the bottom, top fade where it sits at the top. */
+.article-hero--puppies::before,
+.article-hero--mia::before,
+.article-hero--freya::before,
+.article-hero--dobermann::before,
+.article-hero--ourdogs::before,
+.article-hero--sahara::before,
+.article-hero--sirius::before {
   content: "";
   position: absolute;
-  inset: auto 0 0 0;
+  left: 0;
+  right: 0;
   height: 60%;
-  background: linear-gradient(to top, rgba(14, 9, 4, 0.7), transparent);
   z-index: 1;
   pointer-events: none;
 }
 
-.article-hero--puppies h1 {
+.article-hero--puppies::before,
+.article-hero--mia::before,
+.article-hero--freya::before,
+.article-hero--dobermann::before {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(14, 9, 4, 0.7), transparent);
+}
+
+.article-hero--ourdogs::before,
+.article-hero--sahara::before,
+.article-hero--sirius::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(14, 9, 4, 0.7), transparent);
+}
+
+.article-hero--puppies h1,
+.article-hero--mia h1,
+.article-hero--freya h1,
+.article-hero--dobermann h1,
+.article-hero--ourdogs h1,
+.article-hero--sahara h1,
+.article-hero--sirius h1 {
   text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.45),
     0 0 18px rgba(0, 0, 0, 0.5);
