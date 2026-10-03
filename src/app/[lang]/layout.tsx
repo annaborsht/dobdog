@@ -60,7 +60,7 @@ export default async function RootLayout({
                 "@id": `${SITE_URL}/#organization`,
                 name: SITE_NAME,
                 url: SITE_URL,
-                logo: `${SITE_URL}/images/Logo_original.jpg`,
+                logo: `${SITE_URL}/images/logo-icon.png`,
                 email: "contact@dobdog.com",
                 description,
                 foundingDate: "2024",
