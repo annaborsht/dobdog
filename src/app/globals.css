@@ -400,6 +400,27 @@ a {
   margin-bottom: 0;
 }
 
+/* Shorter banner on phones so the cover-fit photo shows all four puppies */
+@media (max-width: 560px) {
+  .article-hero--puppies {
+    min-height: 360px;
+  }
+
+  .article-hero--puppies {
+    padding-bottom: 1rem;
+  }
+
+  /* Keep the title small and low so it sits below the puppies' faces */
+  .article-hero--puppies h1 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .article-hero--puppies .article-hero-image {
+    object-position: 52% center;
+  }
+}
+
 /* Soft dark fade behind banner titles so they read over the photo.
    Bottom fade where the title sits at the bottom, top fade where it sits at the top. */
 .article-hero--puppies::before,
