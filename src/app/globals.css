@@ -481,6 +481,12 @@ a {
   animation: heroZoomDog 4s ease-out forwards;
 }
 
+/* Keep the dog's head in frame on wide screens, and zoom from the head. */
+.article-hero--greatDane .article-hero-image {
+  object-position: 50% 10%;
+  transform-origin: 50% 15%;
+}
+
 .article-hero-content {
   position: relative;
   z-index: 2;
