@@ -1402,7 +1402,7 @@ a {
   border-left: 3px solid var(--gold);
   font-family: var(--font-display), serif;
   font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--ink);
 }
