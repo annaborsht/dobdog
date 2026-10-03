@@ -461,7 +461,11 @@ a {
 
 .article-hero--dobermann {
   justify-content: flex-end;
-  padding-bottom: 10%;
+  padding-bottom: 2.5rem;
+}
+
+.article-hero--dobermann h1 {
+  margin-bottom: 0;
 }
 
 .article-hero--greatDane {
