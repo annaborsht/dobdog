@@ -1,12 +1,7 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  ReactNode,
-} from "react";
+import { createContext, useContext, ReactNode } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { LANG_COOKIE, swapLocale } from "@/lib/i18n";
 
 export type Lang = "en" | "et" | "ru";
 
@@ -381,8 +376,7 @@ export const translations = {
     puppies: {
       badge: "Päringud oodatud",
       title: "Raise them with knowledge, patience and love.",
-      announcement:
-        "25.07.26 sündis 'A' pesakond - 2 poissi ja 2 tüdrukut",
+      announcement: "25.07.26 sündis 'A' pesakond - 2 poissi ja 2 tüdrukut",
       p0: "Kõik DobDog Elegance'i kutsikad kasvavad meie kodus koos vanematega, ümbritsetuna armastusest ja suurepärase veterinaarhooldusega.",
       p1: "Me aretame tervise ja iseloomu nimel ning oleme valivad, millisesse peresse meie kutsikad lähevad.",
       p2: "Pesakondi ei ole alati saadaval — registreerige oma huvi ja saate esimesena teada.",
@@ -587,8 +581,7 @@ export const translations = {
     puppies: {
       badge: "Запросы приветствуются",
       title: "Raise them with knowledge, patience and love.",
-      announcement:
-        "25.07.26 родился помет 'A': 2 мальчика и 2 девочки.",
+      announcement: "25.07.26 родился помет 'A': 2 мальчика и 2 девочки.",
       p0: "Все щенки DobDog Elegance выращиваются в нашем доме вместе с родителями, в окружении любви и отличного ветеринарного ухода.",
       p1: "Мы разводим собак для здоровья и темперамента — и тщательно отбираем семьи для наших щенков.",
       p2: "Пометы бывают не всегда — рекомендуем зарегистрировать интерес заранее.",
@@ -642,23 +635,21 @@ const LangContext = createContext<LangCtx>({
   t: translations.en,
 });
 
-export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+export function LangProvider({
+  lang,
+  children,
+}: {
+  lang: Lang;
+  children: ReactNode;
+}) {
+  const router = useRouter();
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const saved = localStorage.getItem("dobdog-lang");
-    if (saved === "en" || saved === "et" || saved === "ru") {
-      setLangState(saved);
-    }
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
-
+  // The URL is the source of truth for the language; switching navigates to
+  // the same page under the other locale and remembers the choice for "/".
   const setLang = (l: Lang) => {
-    setLangState(l);
-    localStorage.setItem("dobdog-lang", l);
+    document.cookie = `${LANG_COOKIE}=${l}; path=/; max-age=31536000; samesite=lax`;
+    router.push(swapLocale(pathname, l));
   };
 
   return (
