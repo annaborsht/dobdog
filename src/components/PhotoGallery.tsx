@@ -14,14 +14,14 @@ export default function PhotoGallery({
   photos,
   header,
   subheader,
+  caption,
 }: {
   photos: GalleryPhoto[];
   header?: string;
   subheader?: string;
+  caption?: string;
 }) {
-  const [lightboxPhoto, setLightboxPhoto] = useState<GalleryPhoto | null>(
-    null,
-  );
+  const [lightboxPhoto, setLightboxPhoto] = useState<GalleryPhoto | null>(null);
 
   return (
     <div className="sahara-photos">
@@ -45,6 +45,7 @@ export default function PhotoGallery({
             />
           </button>
         ))}
+        {caption && <p className="photos-caption">{caption}</p>}
       </div>
 
       {lightboxPhoto &&

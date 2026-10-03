@@ -1392,6 +1392,34 @@ a {
   margin-top: 1rem;
 }
 
+/* Caption fills the empty cells after the last photo on desktop. */
+.sahara-photos .photos-caption {
+  grid-column: span 2;
+  text-align: left;
+  align-self: center;
+  margin: 0;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 3px solid var(--gold);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .sahara-photos .photos-caption {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+    border-left: none;
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--slate);
+  }
+}
+
 .photo-thumb {
   position: relative;
   padding: 0;

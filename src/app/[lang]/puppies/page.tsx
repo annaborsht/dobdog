@@ -145,11 +145,12 @@ export default function PuppiesPage() {
             header={selectedPuppy.name}
             subheader={p.puppyAge}
             photos={selectedPuppy.photos}
+            caption={
+              selectedPuppy.id === "allegro-a-priori"
+                ? p.allegroCaption
+                : undefined
+            }
           />
-
-          {selectedPuppy.id === "allegro-a-priori" && (
-            <p className="photo-slider-caption">{p.allegroCaption}</p>
-          )}
 
           {selectedPuppy.href && (
             <Link href={selectedPuppy.href} className="source-link">
