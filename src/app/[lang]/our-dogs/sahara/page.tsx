@@ -163,15 +163,51 @@ const DIPLOMAS: Diploma[] = [
 
 // Photo gallery images
 const SAHARA_PHOTOS = [
-  { id: "photo-1", src: "/images/sahara/1.jpeg", alt: "Sahara" },
-  { id: "photo-2", src: "/images/sahara/2.jpeg", alt: "Sahara" },
-  { id: "photo-3", src: "/images/sahara/3.jpeg", alt: "Sahara" },
-  { id: "photo-4", src: "/images/sahara/4.jpeg", alt: "Sahara" },
-  { id: "photo-5", src: "/images/sahara/5.jpeg", alt: "Sahara" },
-  { id: "photo-6", src: "/images/sahara/6.jpeg", alt: "Sahara" },
-  { id: "photo-7", src: "/images/sahara/7.jpeg", alt: "Sahara" },
-  { id: "photo-8", src: "/images/sahara/8.jpeg", alt: "Sahara" },
-  { id: "photo-9", src: "/images/sahara/9.jpeg", alt: "Sahara" },
+  {
+    id: "photo-1",
+    src: "/images/sahara/1.jpeg",
+    alt: "Sahara – champion Great Dane, photo 1",
+  },
+  {
+    id: "photo-2",
+    src: "/images/sahara/2.jpeg",
+    alt: "Sahara – champion Great Dane, photo 2",
+  },
+  {
+    id: "photo-3",
+    src: "/images/sahara/3.jpeg",
+    alt: "Sahara – champion Great Dane, photo 3",
+  },
+  {
+    id: "photo-4",
+    src: "/images/sahara/4.jpeg",
+    alt: "Sahara – champion Great Dane, photo 4",
+  },
+  {
+    id: "photo-5",
+    src: "/images/sahara/5.jpeg",
+    alt: "Sahara – champion Great Dane, photo 5",
+  },
+  {
+    id: "photo-6",
+    src: "/images/sahara/6.jpeg",
+    alt: "Sahara – champion Great Dane, photo 6",
+  },
+  {
+    id: "photo-7",
+    src: "/images/sahara/7.jpeg",
+    alt: "Sahara – champion Great Dane, photo 7",
+  },
+  {
+    id: "photo-8",
+    src: "/images/sahara/8.jpeg",
+    alt: "Sahara – champion Great Dane, photo 8",
+  },
+  {
+    id: "photo-9",
+    src: "/images/sahara/9.jpeg",
+    alt: "Sahara – champion Great Dane, photo 9",
+  },
 ];
 
 export default function SaharaPage() {

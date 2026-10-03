@@ -12,10 +12,10 @@ const ARMAGEDDONS_HOPE_PHOTOS = [
   "armageddon_173",
   "armageddon_793",
   "armageddon_5570",
-].map((id) => ({
+].map((id, i) => ({
   id,
   src: `${PHOTO_BASE_URL}/${id}.jpg`,
-  alt: "Dobdog Elegance Armageddons Hope",
+  alt: `Armageddons Hope – Dobermann puppy, photo ${i + 1}`,
 }));
 
 export default function ArmageddonsHopePage() {

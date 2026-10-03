@@ -7,7 +7,7 @@ import PedigreeTree, { type PedigreeEntry } from "@/components/PedigreeTree";
 import Image from "next/image";
 
 const SIRIUS_PHOTOS = [
-  { id: "photo-1", src: "/images/sirius/1.jpg", alt: "Sirius" },
+  { id: "photo-1", src: "/images/sirius/1.jpg", alt: "Sirius – Dobermann male" },
 ];
 
 const SIRIUS_VIDEOS = [

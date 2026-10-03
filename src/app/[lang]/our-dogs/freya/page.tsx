@@ -234,7 +234,7 @@ const DIPLOMAS: Diploma[] = [
 const FREYA_PHOTOS = Array.from({ length: 21 }, (_, i) => ({
   id: `photo-${i + 1}`,
   src: `/images/freya/${i + 1}.jpg`,
-  alt: "Freya",
+  alt: `Freya – Dobermann female, photo ${i + 1}`,
 }));
 
 export default function FreyaPage() {

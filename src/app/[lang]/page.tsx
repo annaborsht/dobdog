@@ -43,7 +43,7 @@ export default function HomePage() {
             <div>
               <Image
                 src="/images/welcome/logo2.png"
-                alt="logo"
+                alt="DobDog Elegance logo"
                 width={400}
                 height={400}
               />
@@ -51,7 +51,7 @@ export default function HomePage() {
             <div className="logo">
               <Image
                 src="/images/welcome/a1.png"
-                alt="allkiri"
+                alt="DobDog Elegance kennel name"
                 width={150}
                 height={100}
               />
