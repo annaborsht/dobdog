@@ -1660,3 +1660,8 @@ a {
     transition: none;
   }
 }
+
+.puppies-cta .puppies-intro {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}

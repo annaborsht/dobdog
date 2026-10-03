@@ -109,6 +109,7 @@ export default function PuppiesPage() {
         </div>
       </div>
       <div className="puppies-cta">
+        <p className="puppies-intro">{p.intro}</p>
         <h2>{p.announcement}</h2>
 
         <section className="a-litter-section">
