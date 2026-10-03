@@ -173,7 +173,7 @@ export const translations = {
     puppies: {
       badge: "Enquiries welcome",
       title: "Raise them with knowledge, patience and love.",
-      intro: "Dobermann puppies for sale in Estonia",
+      intro: "Dobermann puppies in Estonia",
       introSub: "The 'A' litter · born 25 July 2026",
       announcement:
         "On July 25, 2026, the 'A' litter was born: 2 boys and 2 girls.",
@@ -378,7 +378,7 @@ export const translations = {
     puppies: {
       badge: "Päringud oodatud",
       title: "Raise them with knowledge, patience and love.",
-      intro: "Dobermanni kutsikad müügil Eestis",
+      intro: "Dobermanni kutsikad Eestis",
       introSub: "A-pesakond · sündinud 25. juulil 2026",
       announcement: "25.07.26 sündis 'A' pesakond - 2 poissi ja 2 tüdrukut",
       p0: "Kõik DobDog Elegance'i kutsikad kasvavad meie kodus koos vanematega, ümbritsetuna armastusest ja suurepärase veterinaarhooldusega.",
@@ -585,7 +585,7 @@ export const translations = {
     puppies: {
       badge: "Запросы приветствуются",
       title: "Raise them with knowledge, patience and love.",
-      intro: "Щенки добермана на продажу в Эстонии",
+      intro: "Щенки добермана в Эстонии",
       introSub: "Помёт «A» · родился 25 июля 2026 года",
       announcement: "25.07.26 родился помет 'A': 2 мальчика и 2 девочки.",
       p0: "Все щенки DobDog Elegance выращиваются в нашем доме вместе с родителями, в окружении любви и отличного ветеринарного ухода.",

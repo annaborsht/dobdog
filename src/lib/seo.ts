@@ -199,17 +199,17 @@ const COPY: Record<PageKey, Record<Locale, PageCopy>> = {
   },
   puppies: {
     en: {
-      title: "Dobermann puppies for sale in Estonia | DobDog Elegance",
+      title: "Dobermann puppies in Estonia | DobDog Elegance",
       description:
         "Dobermann puppies from the 'A' litter, born 25 July 2026 in Estonia. Raised at home with socialisation and veterinary care, suitable for sport and shows.",
     },
     et: {
-      title: "Dobermanni kutsikad müügil Eestis | DobDog Elegance",
+      title: "Dobermanni kutsikad Eestis | DobDog Elegance",
       description:
         "Dobermanni kutsikad A-pesakonnast, sündinud 25. juulil 2026 Eestis. Kasvanud kodus, hea sotsialiseerimise ja veterinaarhooldusega, sobivad spordiks ja näitustele.",
     },
     ru: {
-      title: "Щенки добермана на продажу в Эстонии | DobDog Elegance",
+      title: "Щенки добермана в Эстонии | DobDog Elegance",
       description:
         "Щенки добермана из помёта «A», родившиеся 25 июля 2026 года в Эстонии. Выращены дома, с социализацией и ветеринарным уходом, подходят для спорта и выставок.",
     },
