@@ -400,6 +400,23 @@ a {
   margin-bottom: 0;
 }
 
+/* Soft dark fade behind the title so it reads over the grass */
+.article-hero--puppies::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(14, 9, 4, 0.7), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.article-hero--puppies h1 {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(0, 0, 0, 0.5);
+}
+
 .article-hero--ourdogs {
   justify-content: flex-start;
 }
