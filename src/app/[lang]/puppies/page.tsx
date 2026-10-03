@@ -109,7 +109,10 @@ export default function PuppiesPage() {
         </div>
       </div>
       <div className="puppies-cta">
-        <h2 className="puppies-intro">{p.intro}</h2>
+        <h2 className="puppies-intro">
+          {p.intro}
+          <span className="puppies-intro-sub">{p.introSub}</span>
+        </h2>
 
         <section className="a-litter-section">
           <ul className="litter-roster">

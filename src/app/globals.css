@@ -1662,22 +1662,19 @@ a {
 }
 
 .puppies-cta .puppies-intro {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  line-height: 1.3;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height: 1.2;
   text-wrap: balance;
-  max-width: 34rem;
   margin: 0.5rem auto 2rem;
-  padding: 1.1rem 0 1.5rem;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  border-image: linear-gradient(90deg, transparent, var(--gold), transparent) 1;
 }
 
-.puppies-cta .puppies-intro::before {
-  content: "\25C6";
+.puppies-cta .puppies-intro-sub {
   display: block;
-  margin-bottom: 0.6rem;
-  font-size: 0.7rem;
-  line-height: 1;
+  margin-top: 0.5rem;
+  font-family: var(--font-body), serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--gold);
 }
