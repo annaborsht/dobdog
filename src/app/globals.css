@@ -546,6 +546,19 @@ a {
   margin: 0;
 }
 
+/* On phones the dog fills the frame, so put the title at the bottom, clear of her face. */
+@media (max-width: 768px) {
+  .article-hero.article-hero--greatDane h1 {
+    top: auto;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
 .article-hero .article-byline {
   margin-top: 0rem;
   color: var(--gold-light);
