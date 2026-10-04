@@ -424,6 +424,7 @@ a {
 /* Soft dark fade behind banner titles so they read over the photo.
    Bottom fade where the title sits at the bottom, top fade where it sits at the top. */
 .article-hero--puppies::before,
+.article-hero--armageddonshope::before,
 .article-hero--mia::before,
 .article-hero--freya::before,
 .article-hero--dobermann::before,
@@ -440,6 +441,7 @@ a {
 }
 
 .article-hero--puppies::before,
+.article-hero--armageddonshope::before,
 .article-hero--mia::before,
 .article-hero--freya::before,
 .article-hero--dobermann::before {
@@ -455,6 +457,7 @@ a {
 }
 
 .article-hero--puppies h1,
+.article-hero--armageddonshope h1,
 .article-hero--mia h1,
 .article-hero--freya h1,
 .article-hero--dobermann h1,
@@ -478,6 +481,10 @@ a {
   justify-content: flex-end;
   background: linear-gradient(180deg, var(--slate), var(--ink));
   min-height: 400px;
+}
+
+.article-hero--armageddonshope .article-hero-image {
+  object-position: 50% 45%;
 }
 
 .article-hero--dobermann {

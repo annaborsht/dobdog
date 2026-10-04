@@ -1,5 +1,6 @@
 "use client";
 import { useLang } from "@/components/LangContext";
+import Image from "next/image";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import PhotoGallery from "@/components/PhotoGallery";
 import PedigreeTree from "@/components/PedigreeTree";
@@ -26,6 +27,14 @@ export default function ArmageddonsHopePage() {
   return (
     <>
       <div className="article-hero article-hero--armageddonshope">
+        <Image
+          src={`${PHOTO_BASE_URL}/armageddon_5570.jpg`}
+          alt={a.title}
+          fill
+          priority
+          sizes="100vw"
+          className="article-hero-image"
+        />
         <div className="article-hero-content">
           <h1>{a.title}</h1>
           <p className="article-byline">{a.byline}</p>
