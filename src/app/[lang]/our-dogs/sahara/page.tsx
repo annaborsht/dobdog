@@ -4,7 +4,8 @@ import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import Image from "next/image";
 import PhotoGallery from "@/components/PhotoGallery";
-import PedigreeTree, { type PedigreeEntry } from "@/components/PedigreeTree";
+import PedigreeTree from "@/components/PedigreeTree";
+import { SAHARA_PEDIGREE } from "@/lib/pedigrees";
 import TitleBadges from "@/components/TitleBadges";
 import DiplomaViewer, { type Diploma } from "@/components/DiplomaViewer";
 
@@ -20,111 +21,6 @@ const SAHARA_TITLES = [
   "LVA JCH",
   "BALT JCH",
   "C.I.B.-J",
-];
-
-// Add near the top of the file, alongside SAHARA_TITLES
-const PEDIGREE: PedigreeEntry[] = [
-  // Sire's side
-  {
-    gen: 1,
-    side: "sire",
-    row: "1 / span 4",
-    reg: "IKCA74638",
-    name: "Ballyfrawley The Show Must Go On",
-  },
-  {
-    gen: 2,
-    side: "sire",
-    row: "1 / span 2",
-    reg: "AKCWS25518101",
-    name: "Von Charm's Return Of The King",
-  },
-  {
-    gen: 2,
-    side: "sire",
-    row: "3 / span 2",
-    reg: "IKCA02135",
-    name: "Ballyfrawely All This And Heaven Too",
-  },
-  {
-    gen: 3,
-    side: "sire",
-    row: "1",
-    reg: "AKCWS09942704",
-    name: "Jerdans Prince Of Vigo",
-  },
-  {
-    gen: 3,
-    side: "sire",
-    row: "2",
-    reg: "AKCWS10146703",
-    name: "Shady Creeks Sister Golden Hair",
-  },
-  {
-    gen: 3,
-    side: "sire",
-    row: "3",
-    reg: "KCRCAR0902560",
-    name: "Diplomatic's Nicolas Cage Jr To Garsak",
-  },
-  {
-    gen: 3,
-    side: "sire",
-    row: "4",
-    reg: "IKCY88531",
-    name: "Ballyfrawely You Could Be Mine",
-  },
-
-  // Dam's side
-  {
-    gen: 1,
-    side: "dam",
-    row: "5 / span 4",
-    reg: "SHSB767139",
-    name: "Creed Danes A Star From Sahara",
-  },
-  {
-    gen: 2,
-    side: "dam",
-    row: "5 / span 2",
-    reg: "SHSB707661",
-    name: "Captain America Vom Wasaland",
-  },
-  {
-    gen: 2,
-    side: "dam",
-    row: "7 / span 2",
-    reg: "SHSB743343",
-    name: "Phillys-F De' Cinegeti",
-  },
-  {
-    gen: 3,
-    side: "dam",
-    row: "5",
-    reg: "AKCWS10839304",
-    name: "Maitau's No Bones About It Paesan",
-  },
-  {
-    gen: 3,
-    side: "dam",
-    row: "6",
-    reg: "SHSB666496",
-    name: "Love-Dane's Cute Polarqueen",
-  },
-  {
-    gen: 3,
-    side: "dam",
-    row: "7",
-    reg: "ROI13/120980",
-    name: "Highesteem Wizard Of Cinegeti",
-  },
-  {
-    gen: 3,
-    side: "dam",
-    row: "8",
-    reg: "LOI12/62813",
-    name: "Griselda-F De' Cinegeti",
-  },
 ];
 
 // Document data mapped directly from your files
@@ -220,7 +116,7 @@ export default function SaharaPage() {
       <div className="article-hero article-hero--sahara">
         <Image
           src="/images/sahara/banner.jpeg"
-          alt={s.title || "Sahara"}
+          alt={s.title}
           fill
           priority
           sizes="100vw"
@@ -240,7 +136,7 @@ export default function SaharaPage() {
 
         <RevealOnScroll>
           <TitleBadges
-            header={s.titlesHeader || "Titles & Achievements"}
+            header={s.titlesHeader}
             intro={s.p2}
             titles={SAHARA_TITLES}
           />
@@ -248,15 +144,16 @@ export default function SaharaPage() {
 
         <RevealOnScroll>
           <DiplomaViewer
-            header={s.documentsHeader || "Diplomas & Certificates"}
+            header={s.documentsHeader}
             diplomas={DIPLOMAS}
+            openLabel={s.openDocument}
           />
         </RevealOnScroll>
 
         <RevealOnScroll>
           <PedigreeTree
-            header={s.pedigreeHeader || "Pedigree"}
-            entries={PEDIGREE}
+            header={s.pedigreeHeader}
+            entries={SAHARA_PEDIGREE}
             labels={{
               parents: s.parents,
               grandParents: s.grandParents,
@@ -266,10 +163,7 @@ export default function SaharaPage() {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <PhotoGallery
-            header={s.photosHeader || "Фотографии"}
-            photos={SAHARA_PHOTOS}
-          />
+          <PhotoGallery header={s.photosHeader} photos={SAHARA_PHOTOS} />
         </RevealOnScroll>
       </div>
     </>

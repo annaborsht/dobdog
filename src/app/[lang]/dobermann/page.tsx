@@ -12,7 +12,7 @@ export default function DobermannPage() {
         <Image
           className="article-hero-image"
           src="/images/dobermann/banner.jpg"
-          alt={d.title || "Dobermann"}
+          alt={d.title}
           fill
           priority
           sizes="100vw"

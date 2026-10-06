@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-/* ─── 1. Register Custom Font Globally (Outside :root) ─── */
-@font-face {
-  font-family: "witcher";
-  src: url("/fonts/QwitcherGrypen-Regular.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ─── 2. Design Tokens ─────────────────────────────────── */
 :root {
   --ink: #1a1209;
@@ -21,10 +12,8 @@
   --muted: #7a6e65;
   --border: #ddd0be;
 
-  /* Use your font name directly without the var() fallback wrap here */
-  --font-display: "witcher";
-  --font-body: "witcher";
-  --font-hero: "witcher";
+  /* --font-display and --font-body come from next/font in the root layout */
+  --font-hero: var(--font-qwitcher), var(--font-script-cyrillic);
 
   --radius-sm: 4px;
   --radius-md: 10px;
@@ -88,6 +77,7 @@ a {
 
 .navbar-brand {
   font-family: var(--font-hero), serif;
+  font-synthesis: none;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--gold-light);
@@ -118,6 +108,7 @@ a {
   background: none;
   border: none;
   font-family: var(--font-body), serif;
+  white-space: nowrap;
 }
 .nav-link:hover {
   background: rgba(184, 137, 42, 0.18);
@@ -311,6 +302,7 @@ a {
 
 .hero-title {
   font-family: var(--font-hero), serif;
+  font-synthesis: none;
   font-size: clamp(4rem, 8vw, 12rem);
   font-weight: 700;
   color: #fff;
@@ -556,6 +548,7 @@ a {
 
 .article-hero h1 {
   font-family: var(--font-hero), serif;
+  font-synthesis: none;
 
   font-size: clamp(3rem, 5vw, 7rem);
   font-weight: 800;
@@ -873,6 +866,17 @@ a {
   object-fit: contain;
   border-radius: 4px;
 }
+.dog-docs-open {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--rust);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.dog-docs-open:hover {
+  color: var(--gold);
+}
 
 @media (max-width: 768px) {
   .dog-docs-preview iframe {
@@ -921,6 +925,13 @@ a {
 
 .dog-card-body {
   padding: 1.5rem;
+}
+.dog-card .dog-card-breed {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
 }
 .dog-card h3 {
   font-family: var(--font-display), serif;
@@ -1204,6 +1215,24 @@ a {
     background 0.2s,
     transform 0.15s;
 }
+
+.form-status {
+  margin-top: 1rem;
+  color: var(--slate);
+}
+
+.form-status--error {
+  color: var(--rust);
+}
+
+/* Spam trap: hidden from people, visible to naive bots */
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .submit-btn:hover {
   background: var(--slate);
   transform: translateY(-1px);
@@ -1256,13 +1285,29 @@ a {
 }
 
 /* ─── Responsive ─────────────────────────────────── */
-@media (max-width: 768px) {
+/* Mid-size screens: tighten the menu so it fits on one line */
+@media (max-width: 1100px) {
+  .navbar-inner {
+    padding: 0 1.25rem;
+  }
+  .nav-link {
+    padding: 0.45rem 0.55rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Tablets and phones: switch to the hamburger menu */
+@media (max-width: 920px) {
   .nav-links {
     display: none;
   }
   .mobile-menu-btn {
     display: flex;
   }
+}
+
+@media (max-width: 768px) {
   .hero-img {
     height: 360px;
   }

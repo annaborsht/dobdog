@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_NAME_LENGTH = 100;
 const MAX_SUBJECT_LENGTH = 100;
@@ -17,6 +15,17 @@ const requestLog = new Map<string, number[]>();
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
+
+  // Forget visitors whose requests have all aged out, so the log can't grow
+  // without bound on a long-lived instance.
+  if (requestLog.size > 1000) {
+    for (const [key, times] of requestLog) {
+      if (times.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) {
+        requestLog.delete(key);
+      }
+    }
+  }
+
   const recent = (requestLog.get(ip) ?? []).filter(
     (t) => now - t < RATE_LIMIT_WINDOW_MS,
   );
@@ -42,7 +51,22 @@ export async function POST(req: Request) {
     );
   }
 
-  const { name, email, subject, body } = await req.json();
+  let data: Record<string, unknown>;
+  try {
+    data = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+  if (!data || typeof data !== "object") {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+  const { name, email, subject, body, website } = data;
+
+  // Honeypot: the "website" field is hidden from people, so anything in it
+  // came from a bot. Pretend success so the bot doesn't retry.
+  if (typeof website === "string" && website.trim()) {
+    return NextResponse.json({ ok: true });
+  }
 
   if (
     typeof name !== "string" ||
@@ -71,9 +95,12 @@ export async function POST(req: Request) {
   }
 
   const safeName = sanitizeHeaderValue(name);
-  const safeSubject = typeof subject === "string" ? sanitizeHeaderValue(subject) : "";
+  const safeSubject =
+    typeof subject === "string" ? sanitizeHeaderValue(subject) : "";
 
   try {
+    // Created per request so builds don't need RESEND_API_KEY.
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "dobdog contact form <contact@dobdog.com>",
       to: "contact@dobdog.com",

@@ -9,7 +9,11 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-brand">
           <span className="footer-logo">DobDog Elegance</span>
-          <p className="footer-tagline">contact@dobdog.com</p>
+          <p className="footer-tagline">
+            <a href="mailto:contact@dobdog.com" className="footer-link">
+              contact@dobdog.com
+            </a>
+          </p>
           <p className="footer-tagline">FB Heidi Ader</p>
           <p className="footer-tagline">Tallinn, Estonia</p>
         </div>
@@ -34,7 +38,7 @@ export default function Footer() {
           </Link>
         </nav>
         <p className="footer-copy">
-          © {new Date().getFullYear()} DobDog Elegance. All rights reserved.
+          © {new Date().getFullYear()} DobDog Elegance. {t.footer.rights}
         </p>
       </div>
     </footer>

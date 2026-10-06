@@ -23,7 +23,7 @@ export default function OurDogsPage() {
       <div className="article-hero article-hero--ourdogs">
         <Image
           src="/images/ourDogs/banner_cropped.jpg"
-          alt={o.title || "Our Dogs"}
+          alt={o.title}
           fill
           priority
           sizes="100vw"
@@ -39,17 +39,7 @@ export default function OurDogsPage() {
           <div key={name} className="dog-card">
             <div className="dog-card-body">
               <h3>{name}</h3>
-              <p
-                style={{
-                  fontSize: "0.8rem",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "var(--gold)",
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {data.breed}
-              </p>
+              <p className="dog-card-breed">{data.breed}</p>
               <p>{data.blurb}</p>
               <Link href={href} className="dog-card-link">
                 {data.link}
