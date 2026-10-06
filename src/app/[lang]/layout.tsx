@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Source_Serif_4 } from "next/font/google";
+import {
+  Playfair_Display,
+  Qwitcher_Grypen,
+  Source_Serif_4,
+} from "next/font/google";
+import localFont from "next/font/local";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,14 +18,38 @@ import { SITE_NAME, pageMetadata } from "@/lib/seo";
 
 const playfair = Playfair_Display({
   variable: "--font-display",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "cyrillic"],
   weight: ["400", "600", "700", "800"],
 });
 
 const sourceSerif = Source_Serif_4({
   variable: "--font-body",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "cyrillic"],
   weight: ["300", "400", "600"],
+});
+
+// Script font for banner titles. It has no Cyrillic, so Russian letters fall
+// through to Bad Script, scaled down to match Qwitcher's letter height.
+// No metric-matched fallback here, or it would catch Cyrillic first.
+const qwitcher = Qwitcher_Grypen({
+  variable: "--font-qwitcher",
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+  adjustFontFallback: false,
+});
+
+const badScriptCyrillic = localFont({
+  variable: "--font-script-cyrillic",
+  src: "../../fonts/BadScript-cyrillic.woff2",
+  weight: "400",
+  adjustFontFallback: false,
+  declarations: [
+    { prop: "size-adjust", value: "52%" },
+    {
+      prop: "unicode-range",
+      value: "U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116",
+    },
+  ],
 });
 
 export function generateStaticParams() {
@@ -49,7 +78,10 @@ export default async function RootLayout({
   const { description } = pageMetadata("home", lang);
 
   return (
-    <html lang={lang}>
+    <html
+      lang={lang}
+      className={`${qwitcher.variable} ${badScriptCyrillic.variable}`}
+    >
       <body className={`${playfair.variable} ${sourceSerif.variable}`}>
         <JsonLd
           data={{
