@@ -143,7 +143,11 @@ export default function SaharaPage() {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <DiplomaViewer header={s.documentsHeader} diplomas={DIPLOMAS} />
+          <DiplomaViewer
+            header={s.documentsHeader}
+            diplomas={DIPLOMAS}
+            openLabel={s.openDocument}
+          />
         </RevealOnScroll>
 
         <RevealOnScroll>

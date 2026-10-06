@@ -866,6 +866,17 @@ a {
   object-fit: contain;
   border-radius: 4px;
 }
+.dog-docs-open {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--rust);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.dog-docs-open:hover {
+  color: var(--gold);
+}
 
 @media (max-width: 768px) {
   .dog-docs-preview iframe {

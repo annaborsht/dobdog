@@ -169,7 +169,11 @@ export default function FreyaPage() {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <DiplomaViewer header={f.documentsHeader} diplomas={DIPLOMAS} />
+          <DiplomaViewer
+            header={f.documentsHeader}
+            diplomas={DIPLOMAS}
+            openLabel={f.openDocument}
+          />
         </RevealOnScroll>
 
         <RevealOnScroll>
