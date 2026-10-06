@@ -31,7 +31,7 @@ export default function MiaPage() {
             <div className="portrait-video-wrap">
               <video
                 src={VIDEOS_MIA.portrait1}
-                poster="/images/mia_1_thumbnail.png"
+                poster="/images/mia/video-poster-1.jpg"
                 controls
                 playsInline
                 preload="metadata"
@@ -41,7 +41,7 @@ export default function MiaPage() {
             <div className="portrait-video-wrap">
               <video
                 src={VIDEOS_MIA.portrait2}
-                poster="/images/mia_2_thumbnail.png"
+                poster="/images/mia/video-poster-2.jpg"
                 controls
                 playsInline
                 preload="metadata"
