@@ -3,113 +3,10 @@ import { useLang } from "@/components/LangContext";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import Image from "next/image";
 import PhotoGallery from "@/components/PhotoGallery";
-import PedigreeTree, { type PedigreeEntry } from "@/components/PedigreeTree";
+import PedigreeTree from "@/components/PedigreeTree";
+import { FREYA_PEDIGREE } from "@/lib/pedigrees";
 import TitleBadges from "@/components/TitleBadges";
 import DiplomaViewer, { type Diploma } from "@/components/DiplomaViewer";
-
-const PEDIGREE: PedigreeEntry[] = [
-  // Sire's side
-  {
-    gen: 1,
-    side: "sire",
-    row: "1 / span 4",
-    reg: "LŠVKD2983/20",
-    name: "Teraline El Seras",
-  },
-  {
-    gen: 2,
-    side: "sire",
-    row: "1 / span 2",
-    reg: "LOE2369015",
-    name: "Legend Goez on Astor",
-  },
-  {
-    gen: 2,
-    side: "sire",
-    row: "3 / span 2",
-    reg: "RKF4767845",
-    name: "Teraline Arwen",
-  },
-  {
-    gen: 3,
-    side: "sire",
-    row: "1",
-    reg: "RKF29697/21",
-    name: "Sant Kreal Idol",
-  },
-  {
-    gen: 3,
-    side: "sire",
-    row: "2",
-    reg: "LOE2131507",
-    name: "Uruk-Hai Urissa del Jardin de Elfos",
-  },
-  {
-    gen: 3,
-    side: "sire",
-    row: "3",
-    reg: "LOE2183516",
-    name: "Kronos's del valle de Las Aguilas",
-  },
-  {
-    gen: 3,
-    side: "sire",
-    row: "4",
-    reg: "RKF3562252",
-    name: "Teraline Insolence",
-  },
-
-  // Dam's side
-  {
-    gen: 1,
-    side: "dam",
-    row: "5 / span 4",
-    reg: "LV-DB-1937/18",
-    name: "Teraline Gwendolin Happy Fly",
-  },
-  {
-    gen: 2,
-    side: "dam",
-    row: "5 / span 2",
-    reg: "RKF4162750",
-    name: "Teraline Rohan",
-  },
-  {
-    gen: 2,
-    side: "dam",
-    row: "7 / span 2",
-    reg: "RKF4233638",
-    name: "Teraline Sapphira",
-  },
-  {
-    gen: 3,
-    side: "dam",
-    row: "5",
-    reg: "LOF84394/10768",
-    name: "Destiny's Phoenix Highway to Hell",
-  },
-  {
-    gen: 3,
-    side: "dam",
-    row: "6",
-    reg: "RKF2943971",
-    name: "Teraline Ferra",
-  },
-  {
-    gen: 3,
-    side: "dam",
-    row: "7",
-    reg: "UKU0034925",
-    name: "Oksamit de Grande Vinko",
-  },
-  {
-    gen: 3,
-    side: "dam",
-    row: "8",
-    reg: "RKF2323110",
-    name: "Teraline Montera",
-  },
-];
 
 const FREYA_TITLES = [
   "Grand Prix Slovakia winner 2025",
@@ -246,7 +143,7 @@ export default function FreyaPage() {
       <div className="article-hero article-hero--freya">
         <Image
           src="/images/freya/banner.jpg"
-          alt={f.title || "Freya"}
+          alt={f.title}
           fill
           priority
           sizes="100vw"
@@ -268,23 +165,17 @@ export default function FreyaPage() {
         <p>{f.p7}</p>
 
         <RevealOnScroll>
-          <TitleBadges
-            header={f.titlesHeader || "Titles & Achievements"}
-            titles={FREYA_TITLES}
-          />
+          <TitleBadges header={f.titlesHeader} titles={FREYA_TITLES} />
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <DiplomaViewer
-            header={f.documentsHeader || "Diplomas & Certificates"}
-            diplomas={DIPLOMAS}
-          />
+          <DiplomaViewer header={f.documentsHeader} diplomas={DIPLOMAS} />
         </RevealOnScroll>
 
         <RevealOnScroll>
           <PedigreeTree
-            header={f.pedigreeHeader || "Pedigree"}
-            entries={PEDIGREE}
+            header={f.pedigreeHeader}
+            entries={FREYA_PEDIGREE}
             labels={{
               parents: f.parents,
               grandParents: f.grandParents,
@@ -294,10 +185,7 @@ export default function FreyaPage() {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <PhotoGallery
-            header={f.photosHeader || "Фотографии"}
-            photos={FREYA_PHOTOS}
-          />
+          <PhotoGallery header={f.photosHeader} photos={FREYA_PHOTOS} />
         </RevealOnScroll>
       </div>
     </>

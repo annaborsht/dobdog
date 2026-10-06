@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DobDog Elegance
 
-## Getting Started
+Website for DobDog Elegance, a small Dobermann and Great Dane home kennel in
+Estonia — live at [dobdog.com](https://dobdog.com). Built with Next.js (App
+Router) and deployed on Vercel.
 
-First, run the development server:
+## Running locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Languages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Every page exists in English, Estonian and Russian under its own URL:
+`/en/...`, `/et/...`, `/ru/...`. Visiting a URL without a language prefix
+(for example `/puppies`) redirects to the visitor's language (`src/proxy.ts`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What                            | Where                                |
+| ------------------------------- | ------------------------------------ |
+| Page text (all three languages) | `src/components/LangContext.tsx`     |
+| Search titles and descriptions  | `src/lib/seo.ts`                     |
+| Privacy policy                  | `src/app/[lang]/privacy/content.tsx` |
+| Pedigrees                       | `src/lib/pedigrees.ts`               |
+| Pages                           | `src/app/[lang]/...`                 |
+| Styles                          | `src/app/globals.css`                |
 
-## Learn More
+When you change text, update it in all three languages.
 
-To learn more about Next.js, take a look at the following resources:
+## Images and videos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Small site images live in `public/images`.
+- Puppy photos and videos are stored in Vercel Blob and referenced by URL
+  (see `src/app/[lang]/puppies/page.tsx` and `src/lib/videos.ts`).
+- `upload-videos.mjs` uploads local videos to Vercel Blob and prints their
+  URLs. `compress-images.mjs` batch-compresses images in `public/images`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment variables
 
-## Deploy on Vercel
+| Variable                | Needed for                                                          |
+| ----------------------- | ------------------------------------------------------------------- |
+| `RESEND_API_KEY`        | Sending contact form emails (set in Vercel)                         |
+| `NEXT_PUBLIC_SITE_URL`  | Optional; site address for SEO links (default `https://dobdog.com`) |
+| `BLOB_READ_WRITE_TOKEN` | Only for `upload-videos.mjs` (`vercel env pull .env.local`)         |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## SEO
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`src/app/sitemap.ts` and `src/app/robots.ts` generate `/sitemap.xml` and
+`/robots.txt`. The site is verified in Google Search Console via
+`public/google171d9241a175b1c6.html` — keep that file.

@@ -915,6 +915,13 @@ a {
 .dog-card-body {
   padding: 1.5rem;
 }
+.dog-card .dog-card-breed {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
 .dog-card h3 {
   font-family: var(--font-display), serif;
   font-size: 1.5rem;

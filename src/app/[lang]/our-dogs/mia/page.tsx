@@ -12,7 +12,7 @@ export default function MiaPage() {
       <div className="article-hero article-hero--mia">
         <Image
           src="/images/mia/banner.png"
-          alt={m.title || "Mia"}
+          alt={m.title}
           fill
           priority
           sizes="100vw"
