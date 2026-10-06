@@ -1204,6 +1204,24 @@ a {
     background 0.2s,
     transform 0.15s;
 }
+
+.form-status {
+  margin-top: 1rem;
+  color: var(--slate);
+}
+
+.form-status--error {
+  color: var(--rust);
+}
+
+/* Spam trap: hidden from people, visible to naive bots */
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .submit-btn:hover {
   background: var(--slate);
   transform: translateY(-1px);

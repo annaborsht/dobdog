@@ -29,7 +29,9 @@ export const translations = {
       welcome4:
         "Every puppy born is very special to us and carries a piece of our heart. That's why breeding pairs are chosen with great care and responsibility, with attention to the parents' health, character, and pedigree. We raise our puppies with the same dedication – offering a safe home environment, plenty of love, and thorough socialization, so they grow into confident, balanced, and wonderful family members.",
     },
-    footer: {},
+    footer: {
+      rights: "All rights reserved.",
+    },
     dobermann: {
       byline: "Breed spotlight",
       title: "The Dobermann",
@@ -212,6 +214,10 @@ export const translations = {
         "Other",
       ],
       send: "Send message",
+      sending: "Sending…",
+      sent: "Thank you — your message has been sent! We'll get back to you soon.",
+      error:
+        "Something went wrong. Please try again, or email us at contact@dobdog.com.",
     },
   },
   et: {
@@ -237,7 +243,9 @@ export const translations = {
       welcome4:
         "Iga sündiv kutsikas on väga eriline ning kannab endas killukest meie südamest. Seetõttu on aretuspaar valitud suure hoole ja vastutustundega, pöörates tähelepanu nii vanemate tervisele, iseloomule kui ka sugupuule. Sama pühendunult kasvatame ka oma kutsikaid – pakkudes neile turvalist kodust kasvukeskkonda, palju armastust ning põhjalikku sotsialiseerimist, et neist sirguksid enesekindlad, tasakaalukad ja suurepärased pereliikmed.",
     },
-    footer: {},
+    footer: {
+      rights: "Kõik õigused kaitstud.",
+    },
     dobermann: {
       title: "Dobermann",
       h1: "Tõu ajalugu",
@@ -416,6 +424,10 @@ export const translations = {
         "Muu",
       ],
       send: "Saada sõnum",
+      sending: "Saadan…",
+      sent: "Aitäh — sõnum on saadetud! Vastame peagi.",
+      error:
+        "Midagi läks valesti. Palun proovige uuesti või kirjutage meile aadressil contact@dobdog.com.",
     },
   },
   ru: {
@@ -441,7 +453,9 @@ export const translations = {
       welcome4:
         "Каждый рождённый щенок для нас особенный и несёт в себе частичку нашего сердца. Именно поэтому племенные пары подбираются с большой заботой и ответственностью, с вниманием к здоровью, характеру и родословной родителей. С той же преданностью мы выращиваем и наших щенков — предоставляя им безопасную домашнюю среду, много любви и тщательную социализацию, чтобы из них выросли уверенные, уравновешенные и прекрасные члены семьи.",
     },
-    footer: {},
+    footer: {
+      rights: "Все права защищены.",
+    },
     dobermann: {
       byline: "Порода в фокусе",
       title: "Доберман",
@@ -623,6 +637,10 @@ export const translations = {
         "Другое",
       ],
       send: "Отправить",
+      sending: "Отправка…",
+      sent: "Спасибо — сообщение отправлено! Мы скоро ответим.",
+      error:
+        "Что-то пошло не так. Попробуйте ещё раз или напишите нам на contact@dobdog.com.",
     },
   },
 } as const;

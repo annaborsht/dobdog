@@ -20,6 +20,7 @@ export default function ContactPage() {
       email: form.get("email"),
       subject: form.get("subject"),
       body: form.get("body"),
+      website: form.get("website"),
     };
 
     try {
@@ -72,6 +73,17 @@ export default function ContactPage() {
           </div>
         </div>
 
+        <div className="form-honeypot" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
         <div className="form-field">
           <label htmlFor="subject">{c.subject}</label>
           <select id="subject" name="subject">
@@ -94,11 +106,19 @@ export default function ContactPage() {
           className="submit-btn"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "..." : c.send}
+          {status === "sending" ? c.sending : c.send}
         </button>
 
-        {status === "sent" && <p>Thanks — message sent!</p>}
-        {status === "error" && <p>Something went wrong. Please try again.</p>}
+        {status === "sent" && (
+          <p className="form-status" role="status">
+            {c.sent}
+          </p>
+        )}
+        {status === "error" && (
+          <p className="form-status form-status--error" role="alert">
+            {c.error}
+          </p>
+        )}
       </form>
     </div>
   );
