@@ -163,7 +163,7 @@ export default function PuppiesPage() {
 
           {selectedPuppy.twelveWeekPhotos && (
             <PhotoGallery
-              header={p.twelveWeeksHeader}
+              subheader={p.twelveWeeksAge}
               photos={selectedPuppy.twelveWeekPhotos}
             />
           )}
