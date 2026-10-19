@@ -19,6 +19,8 @@ const A_LITTER: {
   locationKey?: "estonia" | "finland";
   available?: boolean;
   photos: GalleryPhoto[];
+  // Shown as a separate section under the main gallery
+  twelveWeekPhotos?: GalleryPhoto[];
 }[] = [
   {
     id: "allegro-a-priori",
@@ -71,6 +73,13 @@ const A_LITTER: {
       src: `${BLOB_BASE_URL}/anouchka/${id}.jpg`,
       alt: "Anouchka At Ozone – Dobermann puppy",
     })),
+    twelveWeekPhotos: [
+      {
+        id: "anouchka_12_weeks",
+        src: "/images/puppies/anouchka_12_weeks.jpg",
+        alt: "Anouchka At Ozone – Dobermann puppy at 12 weeks old",
+      },
+    ],
   },
 ];
 
@@ -151,6 +160,13 @@ export default function PuppiesPage() {
                 : undefined
             }
           />
+
+          {selectedPuppy.twelveWeekPhotos && (
+            <PhotoGallery
+              header={p.twelveWeeksHeader}
+              photos={selectedPuppy.twelveWeekPhotos}
+            />
+          )}
 
           {selectedPuppy.href && (
             <Link href={selectedPuppy.href} className="source-link">
