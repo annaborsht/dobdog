@@ -1732,6 +1732,10 @@ a {
   text-align: center;
 }
 
+.photo-gallery-subheader:first-child {
+  margin-top: 1.5rem;
+}
+
 .photo-slider-caption {
   max-width: 420px;
   margin: 1rem auto 0;
